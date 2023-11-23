@@ -13,7 +13,7 @@
     function addActiveClass(element) {
       if (current === "") {
         //for root url
-        if (element.attr('href').indexOf("index.html") !== -1) {
+        if (element.attr('href').indexOf("index") !== -1) {
           element.parents('.nav-item').last().addClass('active');
           if (element.parents('.sub-menu').length) {
             element.closest('.collapse').addClass('show');
@@ -79,7 +79,24 @@
       } else {
         body.toggleClass('sidebar-icon-only');
       }
+      profileDivDisplay($("#maxSizeProfileDiv"));
+      profileDivDisplay($("#minSizeProfileDiv"));
+
     });
+
+    function profileDivDisplay(div){
+      if (div.hasClass("d-none")) {
+        // d-none class 제거
+        div.removeClass("d-none");
+        // d-inline class 추가
+        div.addClass("d-inline");
+      } else if (div.hasClass("d-inline")) {
+        // d-inline class 제거
+        div.removeClass("d-inline");
+        // d-none class 추가
+        div.addClass("d-none");
+      }
+    }
 
     //checkbox and radios
     $(".form-check label,.form-radio label").append('<i class="input-helper"></i>');
@@ -87,6 +104,7 @@
     //Horizontal menu in mobile
     $('[data-toggle="horizontal-menu-toggle"]').on("click", function() {
       $(".horizontal-menu .bottom-navbar").toggleClass("header-toggled");
+
     });
     // Horizontal menu navigation in mobile menu on click
     var navItemClicked = $('.horizontal-menu .page-navigation >.nav-item');

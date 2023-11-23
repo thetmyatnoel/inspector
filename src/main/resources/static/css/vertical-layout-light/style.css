@@ -20235,6 +20235,12 @@ code {
   font-size: 30px;
 }
 
+.fs-40 {
+    font-size: 40px;
+    font-weight: bold;
+    margin-bottom: 0 !important;
+}
+
 .chartjs-legend ul {
   margin-bottom: 0;
   list-style: none;
@@ -28377,11 +28383,11 @@ div.tagsinput span.tag a {
 }
 
 .auth .brand-logo {
-  margin-bottom: 2rem;
+
 }
 
 .auth .brand-logo img {
-  width: 150px;
+  width: 60px;
 }
 
 .auth form .form-group {
@@ -30591,5 +30597,7 @@ div.tagsinput span.tag a {
     display: none;
   }
 }
+
+
 
 /*# sourceMappingURL=../maps/vertical-layout-light/style.css.map */

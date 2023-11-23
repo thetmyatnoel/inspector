@@ -1,0 +1,20 @@
+server:
+  port: 8080
+  tomcat:
+    basedir: ./
+  servlet:
+    encoding:
+      charset: UTF-8
+      enabled: true
+      force: true
+    session:
+      timeout: 60m
+spring:
+  main:
+    allow-circular-references: true
+    allow-bean-definition-overriding: true
+  application:
+    name: inspector
+  freemarker:
+    suffix: .ftl
+    cache: false

@@ -7,9 +7,9 @@
         </encoder>
     </appender>
     <appender name="file" class="ch.qos.logback.core.rolling.RollingFileAppender">
-        <file>${LOGS_ABSOLUTE_PATH}/logs/bifrost.log</file>
+        <file>${LOGS_ABSOLUTE_PATH}/logs/inspector.log</file>
         <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
-            <fileNamePattern>${LOGS_ABSOLUTE_PATH}/logs/bifrost.%d{yyyy-MM-dd}.log.zip</fileNamePattern>
+            <fileNamePattern>${LOGS_ABSOLUTE_PATH}/logs/inspector.%d{yyyy-MM-dd}.log.zip</fileNamePattern>
             <maxHistory>10</maxHistory>
         </rollingPolicy>
         <encoder>
@@ -19,15 +19,13 @@
         </encoder>
     </appender>
 
-    <logger name="com.skt.bifrost" level="DEBUG">
+    <logger name="com.lab5.inspector" level="DEBUG">
         <appender-ref ref="file"/>
     </logger>
     <logger name="org.springframework" level="ERROR">
-        <appender-ref ref="file"/>
+        <appender-ref ref="console"/>
     </logger>
-    <logger name="org.elasticsearch.client.RestClient" level="ERROR">
-        <appender-ref ref="file"/>
-    </logger>
+
 </configuration>
 
 
