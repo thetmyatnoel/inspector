@@ -19,13 +19,12 @@
         </encoder>
     </appender>
 
-    <logger name="com.lab5.inspector" level="DEBUG">
+    <logger name="com.lab5.inspector" level="INFO">
         <appender-ref ref="file"/>
     </logger>
-    <logger name="org.springframework" level="ERROR">
+    <logger name="org.springframework" level="DEBUG">
         <appender-ref ref="console"/>
     </logger>
-
 </configuration>
 
 

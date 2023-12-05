@@ -16,6 +16,8 @@
     <!-- End plugin css for this page -->
     <!-- inject:css -->
     <link rel="stylesheet" href="css/vertical-layout-light/style.css">
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
     <!-- endinject -->
     <link rel="shortcut icon" href="images/favicon.png" />
+
 </head>

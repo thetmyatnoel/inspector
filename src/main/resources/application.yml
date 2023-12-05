@@ -1,5 +1,5 @@
 server:
-  port: 8080
+  port: 8081
   tomcat:
     basedir: ./
   servlet:
@@ -9,6 +9,7 @@ server:
       force: true
     session:
       timeout: 60m
+
 spring:
   main:
     allow-circular-references: true
@@ -18,3 +19,16 @@ spring:
   freemarker:
     suffix: .ftl
     cache: false
+  datasource:
+    url: jdbc:mariadb://localhost:3306/finalproject?useUnicode=true&characterEncoding=utf8 # serverip:port/dbname
+    username: root               # Replace with your database username
+    password: "newPassword1234"                          # Database password
+    driver-class-name: org.mariadb.jdbc.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        format_sql: true #To beautify or pretty print the SQL
+        show_sql: true #show sql
+# ... (any other configurations)
