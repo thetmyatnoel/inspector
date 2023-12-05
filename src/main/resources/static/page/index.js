@@ -15,7 +15,7 @@ function updateBadgeNumbers() {
 }
 
 document.addEventListener('DOMContentLoaded', function() {
-    // Call the function on page load
+
     updateBadgeNumbers();
 });
 
@@ -71,7 +71,7 @@ $( document ).ready(function() {
         });
         // Move card from '대기' to '진행중'
         $('.stretch-card.transparent').click(function() {
-            selectedCard = $(this); // Store the whole card element
+            selectedCard = $(this);
             console.log("Card selected:", selectedCard);
         });
 
@@ -79,9 +79,9 @@ $( document ).ready(function() {
         $('#addModal-ing-btn').click(function() {
             if (selectedCard) {
                 $('.ingListDiv').append(selectedCard);
-                selectedCard = null; // Reset the selected card
+                selectedCard = null;
                 updateBadgeNumbers();
-              //  let waitHtml = $("#ladonListDiv").html();
+
 
 
             }
@@ -92,7 +92,7 @@ $( document ).ready(function() {
         $('#addModal-end-btn').click(function() {
             if (selectedCard) {
                 $('.endListDiv').append(selectedCard);
-                selectedCard = null; // Reset the selected card
+                selectedCard = null;
                 updateBadgeNumbers();
             }
         });
@@ -101,7 +101,7 @@ $( document ).ready(function() {
         $('#progressModal-end-btn').click(function() {
             if (selectedCard) {
                 $('.endListDiv').append(selectedCard);
-                selectedCard = null; // Reset the selected card
+                selectedCard = null;
                 updateBadgeNumbers();
             }
         });
@@ -109,7 +109,7 @@ $( document ).ready(function() {
 
         $('#bathText').closest('.form-group').hide();
 
-        // Event listener for changes in bathOption radio buttons
+
         $("input[name='bathOption']").change(function() {
             if ($("input[name='bathOption']:checked").val() === "하자") {
                 $('#bathText').closest('.form-group').show();
