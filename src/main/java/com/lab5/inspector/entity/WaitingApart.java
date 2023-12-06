@@ -32,6 +32,7 @@ public class WaitingApart {
 
     @Column(name = "inspectorID")
     private Integer inspectorID;
+/*
 
     @ManyToOne
     @JoinColumn(name = "inspectorID", referencedColumnName = "id")
@@ -46,6 +47,7 @@ public class WaitingApart {
     @OneToMany(mappedBy = "waitingApart", cascade = CascadeType.ALL)
     private List<IngInspectdata> ingInspectdataList;
 
+*/
 
 
 
