@@ -20,15 +20,14 @@ spring:
     suffix: .ftl
     cache: false
   datasource:
-    url: jdbc:mysql://118.67.131.35:3306/finalproject?useUnicode=true&characterEncoding=utf8&serverTimezone=Asia/Seoul
-    username: inspector               # Replace with your database username
-    password: "NewPass1@!"                          # Database password
+    url: jdbc:mysql://118.67.131.35:3306/inspector?useUnicode=true&characterEncoding=utf8&serverTimezone=Asia/Seoul
+    username: inspector
+    password: "NewPass1@!"
     driver-class-name: com.mysql.cj.jdbc.Driver
   jpa:
     hibernate:
       ddl-auto: update
     properties:
       hibernate:
-        format_sql: true #To beautify or pretty print the SQL
-        show_sql: true #show sql
-# ... (any other configurations)
+        format_sql: true
+        show_sql: true

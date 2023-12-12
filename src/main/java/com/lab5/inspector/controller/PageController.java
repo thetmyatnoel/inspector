@@ -26,12 +26,25 @@ public class PageController {
     @Autowired
     private IngInspectdataService ingInspectdataService;
 
+
     @GetMapping({"/", "/index", "/home"})
     public String index(Model model) {
-        List<WaitingApart> aparts = waitingApartService.findAllWaitingAparts();
-        log.info("Number of WaitingAparts: " + aparts.size());
-        model.addAttribute("aparts", aparts);
-        return "index";  // Assuming 'index' is the name of your FreeMarker template
+        List<WaitingApart> pendingAparts = waitingApartService.getApartmentsByStatus("pending");
+        List<WaitingApart> progressAparts = waitingApartService.getApartmentsByStatus("progress");
+        List<WaitingApart> completeAparts = waitingApartService.getApartmentsByStatus("complete");
+
+
+        log.info("Number of Pending Aparts: " + pendingAparts.size());
+        log.info("Number of Progress Aparts: " + progressAparts.size());
+        log.info("Number of Complete Aparts: " + completeAparts.size());
+
+        // Add them to the model
+        model.addAttribute("pendingAparts", pendingAparts);
+        model.addAttribute("progressAparts", progressAparts);
+        model.addAttribute("completeAparts", completeAparts);
+
+
+        return "index";
     }
 
     @RequestMapping(value = "/report", method = RequestMethod.GET)
@@ -53,6 +66,7 @@ public class PageController {
     public ModelAndView login(@RequestParam("username") String username, @RequestParam("password") String password, RedirectAttributes redirectAttributes) {
         if (loginDbService.validateLogin(username, password)) {
             redirectAttributes.addFlashAttribute("username", username);
+            log.info("Username : "+  username + " , Password : " + password);
             return new ModelAndView("redirect:/index");
         } else {
 

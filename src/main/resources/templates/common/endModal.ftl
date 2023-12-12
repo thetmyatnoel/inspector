@@ -2,34 +2,33 @@
     <div class="modal-dialog modal-fullscreen modal-dialog-scrollable" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h4 class="modal-title"><i class="ti-plus"></i> 점검내용 수정</h4>
+                <h4 class="modal-title"><i class="ti-plus"></i> 점검내용 수정하기</h4>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
             <div class="modal-body overflow-auto ">
-
                 <div class="card card-outline-success">
                     <div class="card-body mb-0">
-                        <h4 class="card-title mb-0"><i class="ti-home mr-2"></i>Lottle Castle</h4>
+                        <i class="ti-home mr-2"></i><h4 class="card-title mb-0" id="endModalApartName"></h4>
                     </div>
                     <div class="card-body pt-0">
                         <address>
                             <p class="font-weight-bold">주소</p>
-                            <p>서울시 강남구 신사로32 101동 102호</p>
-                            <p>34평 / 방 3, 욕실 2</p>
+                            <p id="endModalApartAddress"></p>
+                            <p id="endModalApartArea"></p>
                         </address>
                         <div class="form-group mb-0">
                             <label for="customerName"><i class="ti-arrow-right mr-1"></i>고객명</label>
-                            <input type="text" class="form-control rounded" id="customerName" placeholder="Customer name" value="김노엘" disabled />
+                            <input type="text" class="form-control rounded" id="endModalCustomerName" placeholder="Customer name" disabled />
                         </div>
                         <div class="form-group mb-0">
                             <label for="customerPhone"><i class="ti-arrow-right mr-1"></i>전화번호</label>
-                            <input type="text" class="form-control rounded" id="customerPhone" placeholder="Customer Phone Number" value="010-0000-0000" disabled />
+                            <input type="text" class="form-control rounded" id="endModalCusPhone" placeholder="Customer Phone Number" disabled />
                         </div>
                         <div class="form-group mb-0">
                             <label for="inspectorName"><i class="ti-arrow-right mr-1"></i>점검원</label>
-                            <input type="text" class="form-control rounded" id="inspectorName" placeholder="Inspector name" value="점검원" disabled />
+                            <input type="text" class="form-control rounded" id="endModalUsername" placeholder="Inspector name" disabled />
                         </div>
                         <div class="form-group mb-0 mt-2">
                             <div class="card  card-outline-primary">
@@ -119,8 +118,8 @@
                 </div>
             </div>
             <div class="modal-footer d-inline-block text-center">
-                <button type="button" class="btn btn-primary m-0" data-dismiss="modal">수정</button>
-                <button type="button" class="btn btn-secondary  m-0" data-dismiss="modal">저장</button>
+                <button type="button" class="btn btn-primary m-0" id="endModal-correct-btn" data-dismiss="modal">수정</button>
+                <button type="button" class="btn btn-secondary  m-0" id="endModal-cancel-btn" data-dismiss="modal">취소</button>
             </div>
         </div>
     </div>

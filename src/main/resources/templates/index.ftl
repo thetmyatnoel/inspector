@@ -64,15 +64,36 @@
                   </nav>
                   <div class="tab-content py-3 px-3 px-sm-0" id="nav-tabContent">
                     <div class="tab-pane fade show active" id="nav-ing" role="tabpanel" aria-labelledby="nav-ing-tab">
-                      <div class="col-md-12 p-1 ingListDiv" data-toggle="modal" data-target="#progressModal">
-                        <div class="col-md-12 stretch-card transparent" >
-                        </div>
-                      </div>
+                      <#list progressAparts as apart>
+                        <div class="col-md-12 p-1 ingListDiv" data-toggle="modal" data-target="#progressModal"
+                               data-apart-id = "${apart.id}"
+                               data-apart-name="${apart.apartName}"
+                               data-address="${apart.address}"
+                               data-area="${apart.area}"
+                               data-customer-name="${apart.customer_name}"
+                               data-cus-phone="${apart.cus_phone}"
+                               data-username="${username}">
+                            <div class="col-md-12 stretch-card transparent"  id="card${apart.id}">
+                              <div class="card card-outline-primary ">
+                                <div class="card-body">
+                                  <div class="d-flex justify-content-between">
+                                    <p class="card-title" ><i class="ti-arrow-right"></i> ${apart.apartName}</p>
+                                  </div>
+                                  <p>${apart.address}</p>
+                                  <p>${apart.area}</p>
+
+                                </div>
+                                <div class="card-footer text-right">${apart.inspection_date}</div>
+                              </div>
+                            </div>
+                          </div>
+                      </#list>
                     </div>
 
                     <div class="tab-pane fade" id="nav-wait" role="tabpanel" aria-labelledby="nav-wait-tab">
-                      <#list aparts as apart>
+                      <#list pendingAparts as apart>
                       <div class="col-md-12 p-1 waitListDiv" data-toggle="modal" data-target="#addModal"
+                           data-apart-id = "${apart.id}"
                            data-apart-name="${apart.apartName}"
                            data-address="${apart.address}"
                            data-area="${apart.area}"
@@ -99,21 +120,32 @@
                     </div>
 
                     <div class="tab-pane fade" id="nav-end" role="tabpanel" aria-labelledby="nav-end-tab">
-                      <div class="col-md-12 p-1 endListDiv" data-toggle="modal" data-target="#endModal">
-                        <div class="col-md-12 stretch-card transparent">
-                          <div class="card card-outline-primary">
-                            <div class="card-body">
-                              <div class="d-flex justify-content-between">
-                                <p class="card-title"><i class="ti-arrow-right"></i> Example Lable end</p>
-                              </div>
-                              <p>Sub 1</p>
-                              <p>Sub 2</p>
-                            </div>
-                            <div class="card-footer text-right">2023-11-22</div>
-                          </div>
-                        </div>
+                      <#list completeAparts as apart>
+                        <div class="col-md-12 p-1 endListDiv" data-toggle="modal" data-target="#endModal"
+                             data-apart-id = "${apart.id}"
+                             data-apart-name="${apart.apartName}"
+                             data-address="${apart.address}"
+                             data-area="${apart.area}"
+                             data-customer-name="${apart.customer_name}"
+                             data-cus-phone="${apart.cus_phone}"
+                             data-username="${username}">
 
-                      </div>
+                          <div class="col-md-12 stretch-card transparent"  id="card${apart.id}">
+                            <div class="card card-outline-primary ">
+                              <div class="card-body">
+                                <div class="d-flex justify-content-between">
+                                  <p class="card-title" ><i class="ti-arrow-right"></i> ${apart.apartName}</p>
+                                </div>
+                                <p>${apart.address}</p>
+                                <p>${apart.area}</p>
+
+                              </div>
+                              <div class="card-footer text-right">${apart.inspection_date}</div>
+                            </div>
+                          </div>
+
+                        </div>
+                      </#list>
                     </div>
 
                   </div>
@@ -126,6 +158,7 @@
           <#include "/common/addModal.ftl">
           <#include "/common/progressModal.ftl">
           <#include "/common/endModal.ftl">
+
           <!-- content-wrapper ends -->
           <!-- partial:partials/_footer.html -->
           <#include "/common/footer.ftl">

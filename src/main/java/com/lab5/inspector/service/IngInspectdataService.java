@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
+import java.util.List;
 
 @Service
 @Slf4j
@@ -27,5 +28,9 @@ public class IngInspectdataService {
             log.error(e.getMessage());
         }
         return result;
+    }
+    public List<IngInspectdata> findNonEmptyDataByWaitingApartId(Integer waitingApartId)
+    {
+        return ingInspectdataRepository.findNonEmptyDataByWaitingApartId(waitingApartId);
     }
 }

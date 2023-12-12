@@ -30,16 +30,17 @@ public class WaitingApart {
     @Column(name = "area", length = 255)
     private String area;
 
-    @Column(name = "inspectorID")
-    private Integer inspectorID;
-/*
+    @Column(name = "cus_phone", length = 255)
+    private String cus_phone;
 
     @ManyToOne
     @JoinColumn(name = "inspectorID", referencedColumnName = "id")
     private LoginInspector loginInspector;
 
-    @Column(name = "cus_phone", length = 255)
-    private String cus_phone;
+    @Column(name = "status" , columnDefinition = "TEXT")
+    private String status;
+
+
 
     @OneToMany(mappedBy = "waitingApart", cascade = CascadeType.ALL)
     private List<EndInspectdata> endInspectdataList;
@@ -47,7 +48,6 @@ public class WaitingApart {
     @OneToMany(mappedBy = "waitingApart", cascade = CascadeType.ALL)
     private List<IngInspectdata> ingInspectdataList;
 
-*/
 
 
 

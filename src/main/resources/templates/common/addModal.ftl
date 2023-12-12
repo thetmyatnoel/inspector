@@ -11,7 +11,7 @@
 
                 <div class="card card-outline-success">
                     <div class="card-body mb-0">
-                        <h4 class="card-title mb-0" id="modalApartName"><i class="ti-home mr-2"></i></h4>
+                        <i class="ti-home mr-2"></i><h4 class="card-title mb-0" id="modalApartName"></h4>
                     </div>
                     <div class="card-body pt-0">
                         <address>
@@ -133,7 +133,7 @@
                 <h5 class="modal-title" id="exampleModalToggleLabel"><i class="ti-plus"></i> 라돈점검 추가</h5>
             </div>
             <div class="modal-body">
-                <form action="/saveInspectionData" method="post">
+                <form action="" method="post">
                     <div class="form-group mb-0">
                         <label for="ladonRoomName"><i class="ti-pencil mr-1"></i>방이름</label>
                         <input type="text" class="form-control rounded" id="ladonRoomName" placeholder="Room name" value=""  />
@@ -160,7 +160,7 @@
                 <h5 class="modal-title" id="exampleModalToggleLabel"><i class="ti-plus"></i> 포름알데히드 추가</h5>
             </div>
             <div class="modal-body">
-                <form action="/saveInspectionData" method="post">
+                <form action="" method="post">
                     <div class="form-group mb-0">
                         <label for="formaldehydeRoomName"><i class="ti-pencil mr-1"></i>방이름</label>
                         <input type="text" class="form-control rounded" id="formaldehydeRoomName" placeholder="Room name" value=""  />
@@ -188,7 +188,7 @@
                 <h5 class="modal-title" id="exampleModalToggleLabel"><i class="ti-plus"></i> 열화상카메라 점검</h5>
             </div>
             <div class="modal-body">
-                <form action="/saveInspectionData" method="post">
+                <form action="" method="post">
                     <div class="form-group mb-0">
                         <label for="cameraRoomName"><i class="ti-pencil mr-1"></i>방이름</label>
                         <input type="text" class="form-control rounded" id="cameraRoomName" placeholder="Room name" value=""  />
@@ -220,7 +220,7 @@
                 <h5 class="modal-title" id="exampleModalToggleLabel"><i class="ti-plus"></i> 배관 점검</h5>
             </div>
             <div class="modal-body">
-                <form action="/saveInspectionData" method="post">
+                <form action="" method="post">
                     <div class="form-group mb-0">
                         <label for="pipeRoomName"><i class="ti-pencil mr-1"></i>방이름</label>
                         <input type="text" class="form-control rounded" id="pipeRoomName" placeholder="Room name" value=""  />
@@ -251,7 +251,7 @@
                 <h5 class="modal-title" id="exampleModalToggleLabel"><i class="ti-plus"></i> 욕실 점검</h5>
             </div>
             <div class="modal-body">
-                <form action="/saveInspectionData" method="post">
+                <form action="" method="post">
                     <div class="form-group mb-0">
                         <label for="bathRoomName"><i class="ti-pencil mr-1"></i>위치이름</label>
                         <input type="text" class="form-control rounded" id="bathRoomName" placeholder="place name" value=""  />
@@ -286,7 +286,7 @@
                 <h5 class="modal-title" id="exampleModalToggleLabel"><i class="ti-plus"></i> 마감재 점검</h5>
             </div>
             <div class="modal-body">
-                <form action="/saveInspectionData" method="post">
+                <form action="" method="post" enctype="multipart/form-data">
                     <div class="form-group mb-0">
                         <label for="finalRoomName"><i class="ti-pencil mr-1"></i>방이름</label>
                         <input type="text" class="form-control rounded" id="finalRoomName" placeholder="Room name" value=""  />

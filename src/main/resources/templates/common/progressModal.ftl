@@ -8,28 +8,27 @@
                 </button>
             </div>
             <div class="modal-body overflow-auto ">
-
                 <div class="card card-outline-success">
                     <div class="card-body mb-0">
-                        <h4 class="card-title mb-0"><i class="ti-home mr-2"></i>Lottle Castle</h4>
+                        <i class="ti-home mr-2"></i><h4 class="card-title mb-0" id="progressModalApartName"></h4>
                     </div>
                     <div class="card-body pt-0">
                         <address>
                             <p class="font-weight-bold">주소</p>
-                            <p>서울시 강남구 신사로32 101동 102호</p>
-                            <p>34평 / 방 3, 욕실 2</p>
+                            <p id="progressModalApartAddress"></p>
+                            <p id="progressModalApartArea"></p>
                         </address>
                         <div class="form-group mb-0">
                             <label for="customerName"><i class="ti-arrow-right mr-1"></i>고객명</label>
-                            <input type="text" class="form-control rounded" id="customerName" placeholder="Customer name" value="김노엘" disabled />
+                            <input type="text" class="form-control rounded" id="progressModalCustomerName" placeholder="Customer name" disabled />
                         </div>
                         <div class="form-group mb-0">
                             <label for="customerPhone"><i class="ti-arrow-right mr-1"></i>전화번호</label>
-                            <input type="text" class="form-control rounded" id="customerPhone" placeholder="Customer Phone Number" value="010-0000-0000" disabled />
+                            <input type="text" class="form-control rounded" id="progressModalCusPhone" placeholder="Customer Phone Number" disabled />
                         </div>
                         <div class="form-group mb-0">
                             <label for="inspectorName"><i class="ti-arrow-right mr-1"></i>점검원</label>
-                            <input type="text" class="form-control rounded" id="inspectorName" placeholder="Inspector name" value="점검원" disabled />
+                            <input type="text" class="form-control rounded" id="progressModalUsername" placeholder="Inspector name" disabled />
                         </div>
                         <div class="form-group mb-0 mt-2">
                             <div class="card  card-outline-primary">
@@ -40,7 +39,9 @@
                                     </h4>
                                 </div>
                                 <div class="card-body" >
-                                    <div class="row" id="ladonListDiv"></div>
+                                    <div class="row" id="ladonListDiv">
+
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -54,7 +55,9 @@
                                     </h4>
                                 </div>
                                 <div class="card-body" >
-                                    <div class="row" id="formaldehydeListDiv"></div>
+                                    <div class="row" id="formaldehydeListDiv">
+
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -68,7 +71,9 @@
                                     </h4>
                                 </div>
                                 <div class="card-body" >
-                                    <div class="row" id="cameraListDiv"></div>
+                                    <div class="row" id="cameraListDiv">
+
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -82,7 +87,9 @@
                                     </h4>
                                 </div>
                                 <div class="card-body" >
-                                    <div class="row" id="pipeListDiv"></div>
+                                    <div class="row" id="pipeListDiv">
+
+                                    </div>
                                 </div>
                             </div>
                         </div>
