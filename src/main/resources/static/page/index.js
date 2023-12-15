@@ -119,6 +119,7 @@ $( document ).ready(function() {
             console.log("Card selected:", selectedCard);
             var apartId = selectedCard.data('apart-id');
             console.log("Apart Id : ",apartId);
+            fetchNonEmptyProgressInspectData(apartId);
 
 
         });
@@ -127,6 +128,7 @@ $( document ).ready(function() {
             console.log("Card selected:", selectedCard);
             var apartId = selectedCard.data('apart-id');
             console.log("Apart Id : ",apartId);
+            fetchNonEmptyCompleteInspectData(apartId);
 
         });
 
@@ -139,6 +141,13 @@ $( document ).ready(function() {
                     dataType: 'json',
                     success: function (data) {
                         console.log(data);
+                        $("#progressLadonListDiv").empty();
+                        $("#progressFormaldehydeListDiv").empty();
+                        $("#progressCameraListDiv").empty();
+                        $("#progressPipeListDiv").empty();
+                        $("#progressBathListDiv").empty();
+                        $("#progressFinalListDiv").empty();
+
 
                         data.forEach(function (inspectData){
                             if (inspectData.ladonRoom || inspectData.ladonPcl) {
@@ -257,6 +266,12 @@ $( document ).ready(function() {
                     dataType: 'json',
                     success: function (data) {
                         console.log(data);
+                        $("#completeLadonListDiv").empty();
+                        $("#completeFormaldehydeListDiv").empty();
+                        $("#completeCameraListDiv").empty();
+                        $("#completePipeListDiv").empty();
+                        $("#completeBathListDiv").empty();
+                        $("#completeFinalListDiv").empty();
 
                         data.forEach(function (inspectData){
                             if (inspectData.ladonRoom || inspectData.ladonPcl) {
@@ -645,6 +660,7 @@ $( document ).ready(function() {
 
     });
 });
+
 
 $("#addProgressLadonSaveBtn").click(function () {
     let getRoomName = $("#progressLadonRoomName").val();
