@@ -13,11 +13,6 @@ public class IngInspectdata {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    @ManyToOne
-    @JoinColumn(name = "waiting_apart_id", referencedColumnName = "id")
-    private WaitingApart waitingApart;
-
-
     @Column(name = "ladon_room")
     private String ladonRoom;
 
@@ -73,6 +68,10 @@ public class IngInspectdata {
     @Lob
     @Column(name = "final_image2")
     private Blob finalImage2;
+
+    @ManyToOne
+    @JoinColumn(name = "waiting_apart_id", referencedColumnName = "id")
+    private WaitingApart waitingApart;
 
 
 }

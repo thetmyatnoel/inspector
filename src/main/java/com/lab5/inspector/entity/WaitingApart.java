@@ -4,7 +4,6 @@ import jakarta.persistence.*;
 import lombok.Data;
 
 import java.time.LocalDate;
-import java.util.List;
 
 @Data
 @Entity
@@ -41,12 +40,6 @@ public class WaitingApart {
     private String status;
 
 
-
-    @OneToMany(mappedBy = "waitingApart", cascade = CascadeType.ALL)
-    private List<EndInspectdata> endInspectdataList;
-
-    @OneToMany(mappedBy = "waitingApart", cascade = CascadeType.ALL)
-    private List<IngInspectdata> ingInspectdataList;
 
 
 
