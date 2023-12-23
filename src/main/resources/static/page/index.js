@@ -13,7 +13,6 @@ function updateBadgeNumbers() {
     $("#endCountLabel").html($(".endListDiv .transparent .card").length);
 
 }
-
 document.addEventListener('DOMContentLoaded', function() {
 
     updateBadgeNumbers();
@@ -626,7 +625,62 @@ $( document ).ready(function() {
                         console.error('Error updating status', xhr.responseText);
                     }});
             }
-        });
+        })
+
+        //수정
+        $('#endModal-correct-btn').click(function () {
+            console.log("clicked");
+            if (selectedCard) {
+                var apartId = selectedCard.data('apart-id');
+                console.log("apart id : ",apartId);
+                selectedCard = null;
+                updateBadgeNumbers();
+
+
+                let data = [{
+                    waitingApart: {id:apartId},
+                    ladonRoom: $('#completeLadonRoomName').val(),
+                    ladonPcl: $('#completeLadonPciInput').val(),
+                    formalRoom: $('#completeFormaldehydeRoomName').val(),
+                    formalPpm: $('#completeFormaldehydePpmInput').val(),
+                    thermalRoom: $('#completeCameraRoomName').val(),
+                    thermalStatus: $("input[name='completeCameraOption']:checked").val(),
+                    pipeRoom: $('#completePipeRoomName').val(),
+                    pipeStatus: $("input[name='completePipeOption']:checked").val(),
+                    bathRoom: $("#completeBathRoomName").val(),
+                    bathStatus: $("input[name='completeBathOption']:checked").val(),
+                    bathContent: $("#completeBathText").val(),
+                    finalRoom: $("#completeFinalRoomName").val(),
+                    finalGonzone: $("#completeGonzoneInput").val(),
+                    finalSelbu: $("#completeSelbuInput").val(),
+                    finalHaza: $("#completeHazaInput").val(),
+                    finalBgo: $('#completeBgoInput').val(),
+                    finalImage1: $('#completeImageInput1')[0].files[0],
+                    finalImage2: $('#completeImageInput2')[0].files[0]
+
+                }];
+
+
+                $.ajax({
+                    type: "POST",
+                    url: "/data/updateApart",
+                    contentType: "application/json",
+                    data: JSON.stringify(data),
+                    success: function(response) {
+                        console.log('Data saved successfully', response);
+                        alert("저장되었습니다.")
+                        fetchNonEmptyProgressInspectData(apartId);
+                    },
+                    error: function(xhr, status, error) {
+                        console.error('Error saving data', xhr.responseText);
+                    }
+                });
+
+            }
+
+
+        })
+
 
 
         $('#bathText').closest('.form-group').hide();

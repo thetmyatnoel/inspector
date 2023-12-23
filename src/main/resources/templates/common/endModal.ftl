@@ -119,7 +119,7 @@
             </div>
             <div class="modal-footer d-inline-block text-center">
                 <button type="button" class="btn btn-primary m-0" id="endModal-correct-btn" data-dismiss="modal">수정</button>
-                <button type="button" class="btn btn-secondary  m-0" id="endModal-cancel-btn" data-dismiss="modal">취소</button>
+                <button type="button" class="btn btn-secondary  m-0" id="endModal-end-btn" data-dismiss="modal">취소</button>
             </div>
         </div>
     </div>

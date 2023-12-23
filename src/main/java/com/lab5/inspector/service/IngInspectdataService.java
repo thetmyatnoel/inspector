@@ -46,4 +46,5 @@ public class IngInspectdataService {
     {
         return ingInspectdataRepository.findNonEmptyDataByWaitingApartId(waitingApartId);
     }
+
 }

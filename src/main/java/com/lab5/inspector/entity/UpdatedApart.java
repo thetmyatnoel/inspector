@@ -1,22 +1,22 @@
 package com.lab5.inspector.entity;
 
 import jakarta.persistence.*;
-import lombok.Data;
+import lombok.*;
 
 import java.sql.Blob;
 
-@Data
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
 @Entity
-@Table(name = "end_inspectdata")
-public class EndInspectdata {
+@Table(name = "updated_apart")
+public class UpdatedApart {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
-
-    @ManyToOne
-    @JoinColumn(name = "waiting_apart_id", referencedColumnName = "id")
-    private WaitingApart waitingApart;
-
 
     @Column(name = "ladon_room")
     private String ladonRoom;
@@ -74,5 +74,9 @@ public class EndInspectdata {
     @Column(name = "final_image2")
     private Blob finalImage2;
 
+    @ManyToOne
+    @JoinColumn(name = "waiting_apart_id", referencedColumnName = "id")
+    private WaitingApart waitingApart;
 
 }
+

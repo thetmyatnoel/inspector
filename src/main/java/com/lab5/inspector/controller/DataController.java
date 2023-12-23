@@ -1,10 +1,10 @@
 package com.lab5.inspector.controller;
 
-import com.lab5.inspector.entity.EndInspectdata;
 import com.lab5.inspector.entity.IngInspectdata;
+import com.lab5.inspector.entity.UpdatedApart;
 import com.lab5.inspector.entity.WaitingApart;
-import com.lab5.inspector.service.EndInspectdataService;
 import com.lab5.inspector.service.IngInspectdataService;
+import com.lab5.inspector.service.UpdatedApartService;
 import com.lab5.inspector.service.WaitingApartService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,10 +22,11 @@ public class DataController {
 
     @Autowired
     private IngInspectdataService ingInspectdataService;
-    @Autowired
-    private EndInspectdataService endInspectdataService;
+
     @Autowired
     private WaitingApartService waitingApartService;
+    @Autowired
+    private UpdatedApartService updatedApartService;
 
 
 
@@ -47,11 +48,11 @@ public class DataController {
     public Integer saveInspectIng(@RequestBody ArrayList<IngInspectdata> list) {
         return ingInspectdataService.save(list);
     }
-
-    @PostMapping("/saveInspectEnd")
-    public Integer saveInspectEnd(@RequestBody ArrayList<EndInspectdata> list) {
-        return endInspectdataService.save(list);
+    @PostMapping("/updateApart")
+    public Integer updateApart(@RequestBody ArrayList<UpdatedApart> list) {
+        return updatedApartService.updateAndCleanData(list);
     }
+
 
     @GetMapping("/{waitingApartId}")
     public ResponseEntity<List<IngInspectdata>> getNonEmptyDataByWaitingApartId(@PathVariable Integer waitingApartId) {
@@ -61,4 +62,6 @@ public class DataController {
         }
         return ResponseEntity.ok(data);
     }
+
+
 }
