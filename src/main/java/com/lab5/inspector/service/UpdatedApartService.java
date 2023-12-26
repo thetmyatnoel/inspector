@@ -34,7 +34,6 @@ public class UpdatedApartService {
                             .orElseThrow(() -> new EntityNotFoundException("WaitingApart not found with ID: " + waitingApartId));
                     updatedApart.setWaitingApart(waitingApart);
                     ingInspectdataRepository.deleteByWaitingApartId(waitingApartId);
-                    waitingApartRepository.deleteById(waitingApartId);
                 }
             }
             result = updatedApartRepository.saveAll(list).size();

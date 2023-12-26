@@ -318,7 +318,7 @@
 
             </div>
             <div class="modal-footer d-inline-block text-center">
-                <button type="button" class="btn btn-info m-0" data-dismiss="modal" id="addFinalSaveBtn">추가</button>
+                <button type="button" class="btn btn-info m-0" data-dismiss="modal" id="addProgressFinalSaveBtn">추가</button>
                 <button type="button" class="btn btn-secondary  m-0" data-dismiss="modal">취소</button>
 
             </div>

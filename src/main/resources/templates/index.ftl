@@ -57,13 +57,13 @@
                 <div class="card-body">
                   <nav>
                     <div class="nav nav-tabs nav-fill" id="nav-tab" role="tablist">
-                      <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-ing" role="tab" aria-controls="nav-ing" aria-selected="true">진행중 <label class="badge badge-danger" id="ingCountLabel">0</label></a>
+                      <a class="nav-item nav-link active" id="tab1" data-toggle="tab" href="#nav-ing" role="tab" aria-controls="nav-ing" aria-selected="true">진행중 <label class="badge badge-danger" id="ingCountLabel">0</label></a>
                       <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-wait" role="tab" aria-controls="nav-wait" aria-selected="false">대기 <label class="badge badge-warning" id="waitCountLabel">0</label></a>
                       <a class="nav-item nav-link" id="nav-contact-tab" data-toggle="tab" href="#nav-end" role="tab" aria-controls="nav-end" aria-selected="false">완료 <label class="badge badge-success" id="endCountLabel">0</label></a>
                     </div>
                   </nav>
                   <div class="tab-content py-3 px-3 px-sm-0" id="nav-tabContent">
-                    <div class="tab-pane fade show active" id="nav-ing" role="tabpanel" aria-labelledby="nav-ing-tab">
+                    <div class="tab-pane fade show active" id="nav-ing" role="tabpanel" aria-labelledby="tab1">
                       <#list progressAparts as apart>
                         <div class="col-md-12 p-1 ingListDiv" data-toggle="modal" data-target="#progressModal"
                                data-apart-id = "${apart.id}"

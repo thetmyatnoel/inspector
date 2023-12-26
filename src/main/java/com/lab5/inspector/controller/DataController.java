@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 @Slf4j
 @CrossOrigin(origins = "*")
@@ -61,6 +62,17 @@ public class DataController {
             return ResponseEntity.noContent().build();
         }
         return ResponseEntity.ok(data);
+    }
+    @PostMapping("/deleteData/{waitingApartId}")
+    public ResponseEntity<?> deleteData(@PathVariable Integer waitingApartId, @RequestBody Map<String, String> compareData) {
+
+        boolean success = ingInspectdataService.deleteData(waitingApartId, compareData);
+
+        if (success) {
+            return ResponseEntity.ok(Map.of("success", true, "message", "Data deleted successfully."));
+        } else {
+            return ResponseEntity.status(404).body(Map.of("success", false, "message", "Matching data not found or deletion failed."));
+        }
     }
 
 
