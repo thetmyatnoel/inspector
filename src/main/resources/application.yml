@@ -23,15 +23,19 @@ spring:
     suffix: .ftl
     cache: false
   datasource:
-    url: jdbc:mysql://118.67.131.35:3306/inspector?useUnicode=true&characterEncoding=utf8&serverTimezone=Asia/Seoul
-    username: inspector
-    password: "NewPass1@!"
+    url: jdbc:mysql://localhost:3306/inspector?useUnicode=true&characterEncoding=utf8&serverTimezone=Asia/Seoul
+    username: root
+    password: "newPassword1234"
     driver-class-name: com.mysql.cj.jdbc.Driver
   jpa:
     hibernate:
-      ddl-auto: update
+      ddl-auto: none
     properties:
       hibernate:
         dialect: org.hibernate.dialect.MySQL8Dialect
         format_sql: true
         show_sql: true
+  servlet:
+    multipart:
+      max-file-size: 1GB
+      max-request-size: 1GB

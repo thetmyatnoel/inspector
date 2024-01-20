@@ -2,32 +2,43 @@ package com.lab5.inspector.service;
 
 import com.lab5.inspector.entity.LoginInspector;
 import com.lab5.inspector.repository.LoginInspectorRepository;
-import jakarta.annotation.PostConstruct;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 @Service
 @Slf4j
-public class LoginDbService {
+public class LoginDbService implements UserDetailsService {
 
     @Autowired
     private LoginInspectorRepository loginInspectorRepository;
+    @Autowired
+    private PasswordEncoder passwordEncoder;
 
-    @PostConstruct
-    public void init() {
-        LoginInspector LoginInspector = loginInspectorRepository.findByUsername("admin");
-        if(LoginInspector == null){
-            loginInspectorRepository.save(com.lab5.inspector.entity.LoginInspector.builder().username("admin").password("test").build());
+    public void encodeAndSavePhoneNumbersAsPasswords() {
+        List<LoginInspector> inspectors = loginInspectorRepository.findAll(); // Fetch all users
+
+        for (LoginInspector inspector : inspectors) {
+            String encodedPassword = passwordEncoder.encode(inspector.getPassword()); // Encoding the password
+            inspector.setPassword(encodedPassword); // Set the encoded password
+            loginInspectorRepository.save(inspector); // Save the updated user record
         }
     }
 
+    @Override
+    public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
+        LoginInspector loginInspector = loginInspectorRepository.findByUsername(username);
 
-    public boolean validateLogin(String username, String password) {
-        LoginInspector LoginInspector = loginInspectorRepository.findByUsername(username);
+        if (loginInspector == null) {
+            throw new UsernameNotFoundException("User not found with username: " + username);
+        }
 
-        return LoginInspector != null && LoginInspector.getPassword().equals(password);
+        return loginInspector;
     }
-
-
 }

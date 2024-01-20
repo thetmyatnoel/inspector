@@ -24,6 +24,44 @@ const search_tool = (evt) => {
     }
 }
 
-// EventTarget.addEventListener() to bind the search_tool() function (note the deliberate
-// lack of parentheses) as the event-handler for the 'input' event:
 document.querySelector('#searchInput').addEventListener('input', search_tool);
+
+$(document).ready(function() {
+    if (loggedInUsername) {
+        $.ajax({
+            url: `data/reports/${loggedInUsername}`,
+            type: 'GET',
+            success: function(apartments) {
+                displayApartments(apartments);
+            },
+            error: function(error) {
+                console.error('Error fetching data:', error);
+            }
+        });
+    }
+});
+
+function displayApartments(apartments) {
+    const container = $('#apartments-container');
+
+    apartments.forEach((apart, index) => {
+        const cardHtml = `
+            <div class="col-md-12 p-1 rounded card-item" data-label="${apart.apartName}">
+                <div class="col-md-12 stretch-card transparent">
+                    <div class="card card-outline-primary">
+                        <div class="card-body">
+                            <p class="card-title"><i class="ti-files p-2"></i>${index + 1}. ${apart.apartName}</p>
+                        
+                            <p>Address: ${apart.address}</p>
+                            <p>Area: ${apart.area}</p>
+                            <p>Customer Name: ${apart.customer_name}</p>
+                        </div>
+                        <div class="card-footer text-right">${apart.inspection_date}</div>
+                    </div>
+                </div>
+            </div>
+        `;
+
+        container.append(cardHtml);
+    });
+}

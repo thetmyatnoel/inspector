@@ -3,8 +3,6 @@ package com.lab5.inspector.entity;
 import jakarta.persistence.*;
 import lombok.*;
 
-import java.sql.Blob;
-
 @Getter
 @Setter
 @NoArgsConstructor
@@ -66,13 +64,20 @@ public class UpdatedApart {
     @Column(name = "final_bgo")
     private String finalBgo;
 
-    @Lob
-    @Column(name = "final_image1")
-    private Blob finalImage1;
+    @Transient
+    private String finalImage1Base64;
 
+    @Transient
+    private String finalImage2Base64;
+
+
+    @Column(name = "final_image1")
     @Lob
+    private byte[] finalImage1;
+
     @Column(name = "final_image2")
-    private Blob finalImage2;
+    @Lob
+    private byte[] finalImage2;
 
     @ManyToOne
     @JoinColumn(name = "waiting_apart_id", referencedColumnName = "id")

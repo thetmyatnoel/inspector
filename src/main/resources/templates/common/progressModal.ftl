@@ -196,8 +196,9 @@
                 <div class="form-group mb-0">
                     <label for="CameraInput"><i class="ti-pencil mr-1"></i>Select</label>
                     <div class="custom-radio">
-                        <label><input type="radio" name="progressCameraOption" value="곰판이"> 곰판이</label><br>
-                        <label><input type="radio" name="progressCameraOption" value="경로"> 경로</label><br>
+                        <label><input type="radio" name="progressCameraOption" value="정상"> 정상</label><br>
+                        <label><input type="radio" name="progressCameraOption" value="곰팡이"> 곰팡이</label><br>
+                        <label><input type="radio" name="progressCameraOption" value="결로"> 결로</label><br>
                         <label><input type="radio" name="progressCameraOption" value="단열재 누락"> 단열재 누락</label><br>
                         <label><input type="radio" name="progressCameraOption" value="누수"> 누수</label>
                     </div>
@@ -226,8 +227,9 @@
                 <div class="form-group mb-0">
                     <label for="PipeInput"><i class="ti-pencil mr-1"></i>Select</label>
                     <div class="custom-radio">
+                        <label><input type="radio" name="progressPipeOption" value="정상"> 정상</label><br>
                         <label><input type="radio" name="progressPipeOption" value="파손"> 파손</label><br>
-                        <label><input type="radio" name="progressPipeOption" value="페자재"> 페자재</label><br>
+                        <label><input type="radio" name="progressPipeOption" value="폐자재"> 폐자재</label><br>
                         <label><input type="radio" name="progressPipeOption" value="배관 막힘"> 배관 막힘</label>
                     </div>
                 </div>
@@ -256,7 +258,7 @@
                     <label for="BathInput"><i class="ti-pencil mr-1"></i>Check</label>
                     <div class="custom-radio">
                         <label><input type="radio" name="progressBathOption" value="하자"> 하자</label>
-                        <label><input type="radio" name="progressBathOption" value="정상"> 장상</label>
+                        <label><input type="radio" name="progressBathOption" value="정상"> 정상</label>
 
                     </div>
                 </div>

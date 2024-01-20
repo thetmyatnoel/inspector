@@ -28,7 +28,12 @@
                 <label class="text-danger d-none" id="usernameAlertLabel"><i class="ti-alert"></i>Please enter your username</label>
               </div>
               <div class="form-group">
-                <input type="text" class="form-control form-control-lg" id="password" name="password" placeholder="Phone">
+                <div class="input-group">
+                  <input type="password" class="form-control form-control-lg" id="password" name="password" placeholder="Password">
+                  <button id="togglePassword" class="btn" type="button">
+                    <i id="passwordIcon" class="ti-eye"></i>
+                  </button>
+                </div>
                 <label class="text-danger d-none" id="passwordAlertLabel"><i class="ti-alert"></i>Please enter your password</label>
               </div>
               <div class="mt-3">
@@ -57,6 +62,16 @@
   }
 
   $("#username, #password").on('input', validateFields);
+  document.getElementById('togglePassword').addEventListener('click', function (e) {
+    // Toggle the type attribute of the password field
+    const passwordField = document.getElementById('password');
+    const passwordIcon = document.getElementById('passwordIcon');
+    const type = passwordField.getAttribute('type') === 'password' ? 'text' : 'password';
+    passwordField.setAttribute('type', type);
+
+    passwordIcon.classList.toggle('ti-eye');
+    passwordIcon.classList.toggle('ti-eye');
+  });
 </script>
 </body>
 </html>

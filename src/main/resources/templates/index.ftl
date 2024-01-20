@@ -28,7 +28,7 @@
               </#if>
             </a>
             <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="profileDropdown">
-              <a class="dropdown-item" href="/login"><i class="ti-power-off text-primary"></i>Logout</a>
+              <a class="dropdown-item" href="/logout"><i class="ti-power-off text-primary"></i>Logout</a>
             </div>
           </li>
 
@@ -45,16 +45,16 @@
           <div class="row">
             <div class="col-md-12 grid-margin">
               <div class="row">
-                <div class="col-12 col-xl-8 mb-2 mb-xl-0">
+                <div class="col-12 col-xl-8 mb-0 mb-xl-0">
                   <h3 class="font-weight-bold">점검리스트</h3>
                 </div>
               </div>
             </div>
           </div>
           <div class="row">
-            <div class="col-md-12 grid-margin stretch-card">
+            <div class="col-md-12 grid-margin stretch-card mx-0">
               <div class="card">
-                <div class="card-body">
+                <div class="card-body mx-0">
                   <nav>
                     <div class="nav nav-tabs nav-fill" id="nav-tab" role="tablist">
                       <a class="nav-item nav-link active" id="tab1" data-toggle="tab" href="#nav-ing" role="tab" aria-controls="nav-ing" aria-selected="true">진행중 <label class="badge badge-danger" id="ingCountLabel">0</label></a>
@@ -62,10 +62,10 @@
                       <a class="nav-item nav-link" id="nav-contact-tab" data-toggle="tab" href="#nav-end" role="tab" aria-controls="nav-end" aria-selected="false">완료 <label class="badge badge-success" id="endCountLabel">0</label></a>
                     </div>
                   </nav>
-                  <div class="tab-content py-3 px-3 px-sm-0" id="nav-tabContent">
+                  <div class="tab-content py-0 px-0 px-sm-0" id="nav-tabContent">
                     <div class="tab-pane fade show active" id="nav-ing" role="tabpanel" aria-labelledby="tab1">
                       <#list progressAparts as apart>
-                        <div class="col-md-12 p-1 ingListDiv" data-toggle="modal" data-target="#progressModal"
+                        <div class="col-md-12 p-0 ingListDiv" data-toggle="modal" data-target="#progressModal"
                                data-apart-id = "${apart.id}"
                                data-apart-name="${apart.apartName}"
                                data-address="${apart.address}"
@@ -73,7 +73,7 @@
                                data-customer-name="${apart.customer_name}"
                                data-cus-phone="${apart.cus_phone}"
                                data-username="${username}">
-                            <div class="col-md-12 stretch-card transparent"  id="card${apart.id}">
+                            <div class="col-md-12 stretch-card transparent m-0 p-0"  id="card${apart.id}">
                               <div class="card card-outline-primary ">
                                 <div class="card-body">
                                   <div class="d-flex justify-content-between">
@@ -92,7 +92,7 @@
 
                     <div class="tab-pane fade" id="nav-wait" role="tabpanel" aria-labelledby="nav-wait-tab">
                       <#list pendingAparts as apart>
-                      <div class="col-md-12 p-1 waitListDiv" data-toggle="modal" data-target="#addModal"
+                      <div class="col-md-12 p-0 waitListDiv" data-toggle="modal" data-target="#addModal"
                            data-apart-id = "${apart.id}"
                            data-apart-name="${apart.apartName}"
                            data-address="${apart.address}"
@@ -101,7 +101,7 @@
                            data-cus-phone="${apart.cus_phone}"
                            data-username="${username}">
 
-                        <div class="col-md-12 stretch-card transparent"  id="card${apart.id}">
+                        <div class="col-md-12 stretch-card transparent m-0 p-0"  id="card${apart.id}">
                           <div class="card card-outline-primary ">
                             <div class="card-body">
                               <div class="d-flex justify-content-between">
@@ -121,7 +121,7 @@
 
                     <div class="tab-pane fade" id="nav-end" role="tabpanel" aria-labelledby="nav-end-tab">
                       <#list completeAparts as apart>
-                        <div class="col-md-12 p-1 endListDiv" data-toggle="modal" data-target="#endModal"
+                        <div class="col-md-12 p-0 endListDiv" data-toggle="modal" data-target="#endModal"
                              data-apart-id = "${apart.id}"
                              data-apart-name="${apart.apartName}"
                              data-address="${apart.address}"
@@ -130,7 +130,7 @@
                              data-cus-phone="${apart.cus_phone}"
                              data-username="${username}">
 
-                          <div class="col-md-12 stretch-card transparent"  id="card${apart.id}">
+                          <div class="col-md-12 stretch-card transparent m-0 p-0"  id="card${apart.id}">
                             <div class="card card-outline-primary ">
                               <div class="card-body">
                                 <div class="d-flex justify-content-between">

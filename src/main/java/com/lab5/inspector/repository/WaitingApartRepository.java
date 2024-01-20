@@ -7,4 +7,5 @@ import java.util.List;
 
 public interface WaitingApartRepository extends JpaRepository<WaitingApart, Integer> {
     List<WaitingApart> findByStatus(String status);
+    List<WaitingApart> findByStatusAndLoginInspector_Id(String status, int inspectorId);
 }

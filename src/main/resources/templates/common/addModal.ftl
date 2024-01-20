@@ -171,6 +171,7 @@
                     </div>
 
                 </form>
+            </div>
             <div class="modal-footer d-inline-block text-center">
                 <button type="button" class="btn btn-info m-0" data-dismiss="modal" id="addFormaldehydeSaveBtn">추가</button>
                 <button type="button" class="btn btn-secondary  m-0" data-dismiss="modal">취소</button>
@@ -178,8 +179,8 @@
             </div>
         </div>
     </div>
-    </div>
 </div>
+
 
 <div class="modal fade" id="addCameraModal" aria-hidden="true" aria-labelledby="addCameraModalLabel" tabindex="-1">
     <div class="modal-dialog modal-dialog-centered">
@@ -196,8 +197,9 @@
                     <div class="form-group mb-0">
                         <label for="CameraInput"><i class="ti-pencil mr-1"></i>Select</label>
                         <div class="custom-radio">
-                            <label><input type="radio" name="cameraOption" value="곰판이"> 곰판이</label><br>
-                            <label><input type="radio" name="cameraOption" value="경로"> 경로</label><br>
+                            <label><input type="radio" name="cameraOption" value="정상"> 정상</label><br>
+                            <label><input type="radio" name="cameraOption" value="곰팡이"> 곰팡이</label><br>
+                            <label><input type="radio" name="cameraOption" value="결로"> 결로</label><br>
                             <label><input type="radio" name="cameraOption" value="단열재 누락"> 단열재 누락</label><br>
                             <label><input type="radio" name="cameraOption" value="누수"> 누수</label>
                         </div>
@@ -228,8 +230,9 @@
                     <div class="form-group mb-0">
                         <label for="PipeInput"><i class="ti-pencil mr-1"></i>Select</label>
                         <div class="custom-radio">
+                            <label><input type="radio" name="pipeOption" value="정상"> 정상</label><br>
                             <label><input type="radio" name="pipeOption" value="파손"> 파손</label><br>
-                            <label><input type="radio" name="pipeOption" value="페자재"> 페자재</label><br>
+                            <label><input type="radio" name="pipeOption" value="폐자재"> 폐자재</label><br>
                             <label><input type="radio" name="pipeOption" value="배관 막힘"> 배관 막힘</label>
                         </div>
                     </div>
@@ -260,7 +263,7 @@
                         <label for="BathInput"><i class="ti-pencil mr-1"></i>Check</label>
                         <div class="custom-radio">
                             <label><input type="radio" name="bathOption" value="하자"> 하자</label>
-                            <label><input type="radio" name="bathOption" value="정상"> 장상</label>
+                            <label><input type="radio" name="bathOption" value="정상"> 정상</label>
 
                         </div>
                     </div>
