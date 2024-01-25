@@ -4,7 +4,13 @@
             <div class="card card-tale" >
                 <div class="card-body text-center">
                     <img src="images/user.png" />
-                    <p class="mb-2">사용자 이름(XXX)</p>
+                    <p class="mb-2">사용자 이름 :
+                        <#if username?? && username != "">
+                            ${username}
+                        <#else>
+                            User
+                        </#if>
+                    </p>
                     <p class="mb-2">모바일 접수 기간</p>
                     <div class="row-cols-3">
                         <div class="d-inline bg-danger text-white">진행중<label class="badge" id="sideIngCountLabel">0</label></div>

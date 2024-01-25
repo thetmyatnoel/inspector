@@ -72,6 +72,7 @@
                                data-area="${apart.area}"
                                data-customer-name="${apart.customer_name}"
                                data-cus-phone="${apart.cus_phone}"
+                               data-email="${apart.email}"
                                data-username="${username}">
                             <div class="col-md-12 stretch-card transparent m-0 p-0"  id="card${apart.id}">
                               <div class="card card-outline-primary ">
@@ -81,7 +82,6 @@
                                   </div>
                                   <p>${apart.address}</p>
                                   <p>${apart.area}</p>
-
                                 </div>
                                 <div class="card-footer text-right">${apart.inspection_date}</div>
                               </div>
@@ -99,6 +99,7 @@
                            data-area="${apart.area}"
                            data-customer-name="${apart.customer_name}"
                            data-cus-phone="${apart.cus_phone}"
+                           data-email="${apart.email}"
                            data-username="${username}">
 
                         <div class="col-md-12 stretch-card transparent m-0 p-0"  id="card${apart.id}">
@@ -109,7 +110,6 @@
                               </div>
                               <p>${apart.address}</p>
                               <p>${apart.area}</p>
-
                             </div>
                            <div class="card-footer text-right">${apart.inspection_date}</div>
                           </div>
@@ -128,6 +128,7 @@
                              data-area="${apart.area}"
                              data-customer-name="${apart.customer_name}"
                              data-cus-phone="${apart.cus_phone}"
+                             data-email="${apart.email}"
                              data-username="${username}">
 
                           <div class="col-md-12 stretch-card transparent m-0 p-0"  id="card${apart.id}">

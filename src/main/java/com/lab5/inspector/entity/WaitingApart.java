@@ -23,6 +23,9 @@ public class WaitingApart {
     @Column(name = "customer_name", length = 255)
     private String customer_name;
 
+    @Column(name = "register_date")
+    private LocalDate register_date;
+
     @Column(name = "inspection_date")
     private LocalDate inspection_date;
 
@@ -31,6 +34,9 @@ public class WaitingApart {
 
     @Column(name = "cus_phone", length = 255)
     private String cus_phone;
+
+    @Column(name = "email", length = 255)
+    private String email;
 
     @ManyToOne
     @JoinColumn(name = "inspectorID", referencedColumnName = "id")

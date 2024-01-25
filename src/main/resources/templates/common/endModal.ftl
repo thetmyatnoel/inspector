@@ -27,6 +27,10 @@
                             <input type="text" class="form-control rounded" id="endModalCusPhone" placeholder="Customer Phone Number" disabled />
                         </div>
                         <div class="form-group mb-0">
+                            <label for="email"><i class="ti-arrow-right mr-1"></i>이메일</label>
+                            <input type="text" class="form-control rounded" id="endModalEmail" placeholder="Customer Email" disabled />
+                        </div>
+                        <div class="form-group mb-0">
                             <label for="inspectorName"><i class="ti-arrow-right mr-1"></i>점검원</label>
                             <input type="text" class="form-control rounded" id="endModalUsername" placeholder="Inspector name" disabled />
                         </div>

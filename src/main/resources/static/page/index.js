@@ -61,6 +61,7 @@ $( document ).ready(function() {
             var area = $(this).data('area');
             var customerName = $(this).data('customer-name');
             var cusPhone = $(this).data('cus-phone');
+            var email = $(this).data('email')
             var username = $(this).data('username');
 
             // Populate modal
@@ -70,6 +71,7 @@ $( document ).ready(function() {
             $('#progressModalArea').text(area);
             $('#progressModalCustomerName').val(customerName);
             $('#progressModalCusPhone').val(cusPhone);
+            $('#progressModalEmail').val(email);
             $('#progressModalUsername').val(username);
         });
 
@@ -81,6 +83,7 @@ $( document ).ready(function() {
             var area = $(this).data('area');
             var customerName = $(this).data('customer-name');
             var cusPhone = $(this).data('cus-phone');
+            var email = $(this).data('email')
             var username = $(this).data('username');
 
             // Populate modal
@@ -90,6 +93,7 @@ $( document ).ready(function() {
             $('#modalArea').text(area);
             $('#modalCustomerName').val(customerName);
             $('#modalCusPhone').val(cusPhone);
+            $('#modalEmail').val(email);
             $('#modalUsername').val(username);
         });
         $('.endListDiv').click(function () {
@@ -100,6 +104,7 @@ $( document ).ready(function() {
             var area = $(this).data('area');
             var customerName = $(this).data('customer-name');
             var cusPhone = $(this).data('cus-phone');
+            var email = $(this).data('email')
             var username = $(this).data('username');
 
             // Populate modal
@@ -109,6 +114,7 @@ $( document ).ready(function() {
             $('#endModalApartArea').text(area);
             $('#endModalCustomerName').val(customerName);
             $('#endModalCusPhone').val(cusPhone);
+            $('#endModalEmail').val(email);
             $('#endModalUsername').val(username);
         });
 
@@ -1271,9 +1277,9 @@ function common_addDefaultListDiv(div, room, value, value_unit){
                 </div>
             </div>
             
-            <input type="hidden" class="rooms" value="${room}" />
-            <input type="hidden" class="values" value="${value}" />
-          
+                <input type="hidden" class="rooms" value="${room}" />
+                <input type="hidden" class="values" value="${value}" />
+            
         </div>`
     );
     $(div).append(html.join(''));
@@ -1288,7 +1294,11 @@ function addCameraToList(div, roomName, cameraOption) {
                     <h5 class="card-title">${roomName}</h5>
                     <button class="close x_badge ml-1 p-1" aria-label="Close">&times;</button>
                 </div>
-                <div class="card-body m-0 p-0">${cameraOption}</div>
+                 <div class="card-body m-1 p-1">
+                    <ul class="list-arrow m-0">
+                        <li>${cameraOption}</li>
+                    </ul>
+                </div>
             </div>
             <input type="hidden" class="rooms" value="${roomName}" />
             <input type="hidden" class="options" value="${cameraOption}" />
@@ -1309,18 +1319,31 @@ function addBathToList(div, roomName, bathOption, bathText) {
                     <h5 class="card-title mb-0">${roomName}</h5>
                     <button class="close x_badge" aria-label="Close">&times;</button>
                 </div>
-                <div class="card-body m-0 p-0">${bathOption}</div>`
+                <div class="card-body m-1 p-1">
+                    <ul class="list-arrow m-0">
+                        <li>${bathOption}</li>
+                    
+                `
     );
 
     if (bathOption === "하자") {
-        html.push(`<div class="card-body m0- p-0">${bathText}</div>`);
+        html.push(`        <li>${bathText}</li>
+                        </ul>
+                    </div>`);
+    }
+    else
+    {
+        html.push(`      </ul>
+                    </div>`);
     }
 
     html.push(
         `</div>
+         
             <input type="hidden" class="rooms" value="${roomName}" />
             <input type="hidden" class="bathoptions" value="${bathOption}" />
             <input type="hidden" class="texts" value="${bathText}" />
+         
         </div>
         `
     );
@@ -1338,10 +1361,14 @@ function addFinalToList(div, roomName, gonZone, selBu, haZa, bGo, image1, image2
                     <h5 class="card-title mb-0">${roomName}</h5>
                     <button class="close x_badge" aria-label="Close">&times;</button>
                 </div>
-                <div class="card-body m-0 p-0">${gonZone}</div>
-                <div class="card-body m-0 p-0">${selBu}</div>
-                <div class="card-body m-0 p-0">${haZa}</div>
-                <div class="card-body m-0 p-0">${bGo}</div>`
+                <div class="card-body m-1 p-1">
+                    <ul class="list-arrow m-0">
+                        <li>${gonZone}</li>
+                        <li>${selBu}</li>
+                        <li>${haZa}</li>
+                        <li>${bGo}</li>
+                    </ul>
+                </div>`
     );
 
     if (image1) {
