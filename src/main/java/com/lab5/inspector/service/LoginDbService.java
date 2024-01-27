@@ -22,12 +22,12 @@ public class LoginDbService implements UserDetailsService {
     private PasswordEncoder passwordEncoder;
 
     public void encodeAndSavePhoneNumbersAsPasswords() {
-        List<LoginInspector> inspectors = loginInspectorRepository.findAll(); // Fetch all users
+        List<LoginInspector> inspectors = loginInspectorRepository.findAll();
 
         for (LoginInspector inspector : inspectors) {
-            String encodedPassword = passwordEncoder.encode(inspector.getPassword()); // Encoding the password
-            inspector.setPassword(encodedPassword); // Set the encoded password
-            loginInspectorRepository.save(inspector); // Save the updated user record
+            String encodedPassword = passwordEncoder.encode(inspector.getPassword());
+            inspector.setPassword(encodedPassword);
+            loginInspectorRepository.save(inspector);
         }
     }
 

@@ -5,6 +5,7 @@ import lombok.*;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
+import java.time.LocalDate;
 import java.util.Collection;
 import java.util.Collections;
 
@@ -26,6 +27,12 @@ public class LoginInspector implements UserDetails {
 
     @Column(nullable = false, length = 255)
     private String password;
+
+    @Column(name = "register_date")
+    private LocalDate register_date;
+
+    @Column(name = "email", length = 255)
+    private String email;
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities(){

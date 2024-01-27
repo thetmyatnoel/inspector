@@ -3,6 +3,7 @@ package com.lab5.inspector.service;
 import com.lab5.inspector.entity.Report;
 import com.lab5.inspector.entity.WaitingApart;
 import com.lab5.inspector.repository.ReportRepository;
+import jakarta.persistence.EntityNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
@@ -32,7 +33,9 @@ public class ReportService {
 
         return reportRepository.save(report);
     }
-    /*public List<Report> getAllReports() {
-        return reportRepository.findAll();
-    }*/
+    public byte[] getReportContentByName(String name) {
+        Report report = reportRepository.findByName(name)
+                .orElseThrow(() -> new EntityNotFoundException("Report not found"));
+        return report.getContent();
+    }
 }

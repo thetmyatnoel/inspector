@@ -10,7 +10,11 @@ import freemarker.template.TemplateException;
 import jakarta.servlet.http.HttpServletResponse;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.io.ByteArrayResource;
+import org.springframework.core.io.Resource;
+import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.ui.freemarker.FreeMarkerTemplateUtils;
 import org.springframework.web.bind.annotation.*;
@@ -165,6 +169,20 @@ public class DataController {
         List<WaitingApart> finalAparts = waitingApartService.getFinalApartmentsByUsername(username);
         return ResponseEntity.ok(finalAparts);
     }
+    @GetMapping("/reports/by-name/{name}")
+    public ResponseEntity<Resource> viewReportByName(@PathVariable String name) {
+        byte[] reportContent = reportService.getReportContentByName(name);
+
+        if (reportContent == null || reportContent.length == 0) {
+            return ResponseEntity.notFound().build();
+        }
+
+        return ResponseEntity.ok()
+                .contentType(MediaType.APPLICATION_PDF)
+                .header(HttpHeaders.CONTENT_DISPOSITION, "inline")
+                .body(new ByteArrayResource(reportContent));
+    }
+
 
 
 

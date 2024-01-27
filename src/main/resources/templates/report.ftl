@@ -71,6 +71,11 @@
                         </div>
                     </div>
                 </div>
+                <!-- Add this in your content-wrapper where you want to display the PDF -->
+                <#-- <div class="pdf-viewer">
+                    <#include "/common/pdfViewer.ftl">
+                </div> -->
+
 
                 <#include "/common/footer.ftl">
             </div>
@@ -86,6 +91,8 @@
 <script type="text/javascript">
     const loggedInUsername = "${username!""}";
 </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.6.347/pdf.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.6.347/pdf.worker.min.js"></script>
 <script src="/page/report.js"></script>
 <!-- endinject -->
 </body>
