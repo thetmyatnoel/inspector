@@ -33,6 +33,7 @@ dependencies {
     implementation 'com.itextpdf:itext7-core:7.1.9'
     implementation 'com.itextpdf:html2pdf:3.0.3'
     implementation 'org.springframework.boot:spring-boot-starter-security'
+    implementation 'org.springframework.boot:spring-boot-starter-mail'
 
     compileOnly 'org.projectlombok:lombok'
     annotationProcessor 'org.springframework.boot:spring-boot-configuration-processor'

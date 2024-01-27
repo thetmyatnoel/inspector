@@ -56,8 +56,10 @@ function displayApartments(apartments) {
                             <p>Area: ${apart.area}</p>
                             <p>Customer Name: ${apart.customer_name}</p>
                         </div>
-                        <div class="card-footer text-right">${apart.inspection_date}</div>
-                    </div>
+                        <div class="card-footer d-flex justify-content-between align-items-center">
+                            <button class="btn btn-primary" onclick="sendEmail('${apart.id}')">이메일 전송</button>
+                            <p class="text-left">${apart.inspection_date}</p>
+                        </div>
                 </div>
             </div>
         `;
@@ -121,4 +123,16 @@ function fetchAndDisplayReportByName(name) {
         }
     });*/
 
+}
+function sendEmail(waitingApartId) {
+    $.ajax({
+        url: `/data/send-report-email/${waitingApartId}`,
+        type: 'POST',
+        success: function(response) {
+            alert('이메일 전송 성공!!');
+        },
+        error: function(error) {
+            console.error('Error sending email:', error);
+        }
+    });
 }

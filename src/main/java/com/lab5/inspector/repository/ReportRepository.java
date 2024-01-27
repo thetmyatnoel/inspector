@@ -11,4 +11,5 @@ import java.util.Optional;
 public interface ReportRepository extends JpaRepository<Report, Integer> {
     List<Report> findAll();
     Optional<Report> findByName(String name);
+    Optional<Report> findByWaitingApartId(Integer waitingApart);
 }

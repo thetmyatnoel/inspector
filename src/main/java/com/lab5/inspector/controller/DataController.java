@@ -7,6 +7,7 @@ import com.lab5.inspector.service.*;
 import freemarker.template.Configuration;
 import freemarker.template.Template;
 import freemarker.template.TemplateException;
+import jakarta.mail.MessagingException;
 import jakarta.servlet.http.HttpServletResponse;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -43,7 +44,8 @@ public class DataController {
     @Autowired
     private ReportService reportService;
 
-
+    @Autowired
+    private EmailService emailService;
 
 
     @PostMapping("/updateStatus")
@@ -183,7 +185,13 @@ public class DataController {
                 .body(new ByteArrayResource(reportContent));
     }
 
-
-
-
+    @PostMapping("/send-report-email/{waitingApartId}")
+    public ResponseEntity<?> sendReportEmail(@PathVariable int waitingApartId) {
+        try {
+            emailService.sendReportEmail(waitingApartId);
+            return ResponseEntity.ok().build();
+        } catch (MessagingException e) {
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Error sending email");
+        }
+    }
 }
