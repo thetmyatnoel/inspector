@@ -6,15 +6,16 @@ import com.lab5.inspector.repository.ReportRepository;
 import com.lab5.inspector.repository.WaitingApartRepository;
 import jakarta.mail.MessagingException;
 import jakarta.mail.internet.MimeMessage;
+import lombok.extern.java.Log;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.io.ByteArrayResource;
+import org.springframework.core.io.InputStreamSource;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.mail.javamail.MimeMessageHelper;
 import org.springframework.stereotype.Service;
 
-import java.io.ByteArrayInputStream;
-import java.io.InputStream;
 import java.util.Optional;
-
+@Log
 @Service
 public class EmailService {
     @Autowired
@@ -38,6 +39,7 @@ public class EmailService {
             Optional<Report> reportOptional = reportRepository.findByWaitingApartId(waitingApart.getId());
             if (reportOptional.isPresent()) {
                 Report report = reportOptional.get();
+
                 sendEmailWithAttachment(recipientEmail, subject, content, report.getContent(), "report.pdf");
             } else {
                 throw new RuntimeException("Report not found for WaitingApartId: " + waitingApartId);
@@ -56,10 +58,10 @@ public class EmailService {
         helper.setText(text);
 
         if (attachment != null) {
-            InputStream attachmentStream = new ByteArrayInputStream(attachment);
-            helper.addAttachment(attachmentName, () -> attachmentStream);
+            InputStreamSource attachmentSource = new ByteArrayResource(attachment);
+            helper.addAttachment(attachmentName, attachmentSource, "application/pdf");
         }
 
-       mailSender.send(message);
+        mailSender.send(message);
     }
 }

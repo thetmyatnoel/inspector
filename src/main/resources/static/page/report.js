@@ -46,10 +46,10 @@ function displayApartments(apartments) {
 
     apartments.forEach((apart, index) => {
         const cardHtml = `
-            <div class="col-md-12 p-1 rounded card-item" data-label="${apart.apartName}" onclick="fetchAndDisplayReportByName('${apart.customer_name}')">
+            <div class="col-md-12 p-1 rounded card-item" data-label="${apart.apartName}">
                 <div class="col-md-12 stretch-card transparent">
                     <div class="card card-outline-primary">
-                        <div class="card-body">
+                        <div class="card-body" onclick="fetchAndDisplayReportByName('${apart.customer_name}')">
                             <p class="card-title"><i class="ti-files p-2"></i>${index + 1}. ${apart.apartName}</p>
                         
                             <p>Address: ${apart.address}</p>
