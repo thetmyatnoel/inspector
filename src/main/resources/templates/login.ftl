@@ -11,7 +11,7 @@
           <div class="auth-form-light text-left py-5 px-4 px-sm-5">
             <div class="brand-logo text-center">
               <img src="images/logo.png" alt="logo" class="align-top">
-              <label class="fs-40">INSPECTOR</label>
+              <label class="fs-40">집하자</label>
               <h6 class="font-weight-light">User Login</h6>
             </div>
 
@@ -40,6 +40,7 @@
                 <button type="submit" class="btn btn-block btn-primary btn-lg font-weight-medium auth-form-btn" id="loginBtn" disabled><i class="icon-check mr-1"></i> LOG IN</button>
                 <p id="fillFieldsMsg" class="text-danger d-none">Please fill in both fields to log in.</p>
               </div>
+
             </form>
           </div>
         </div>
@@ -72,6 +73,7 @@
     passwordIcon.classList.toggle('ti-eye');
     passwordIcon.classList.toggle('ti-eye');
   });
+
 </script>
 </body>
 </html>

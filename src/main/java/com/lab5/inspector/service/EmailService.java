@@ -32,7 +32,7 @@ public class EmailService {
             WaitingApart waitingApart = waitingApartOptional.get();
             String recipientEmail = waitingApart.getEmail();
             String subject = "하자 점검 리포트";
-            String content = "안녕하십니까 고객님? "+"\n"+"입사 축하드립니다. 아래에 점검한 내용을 확인하실 수 있습니다." +"\n"+
+            String content = "안녕하십니까 고객님? "+"\n"+"입주 축하드립니다. 아래에 점검한 내용을 확인하실 수 있습니다." +"\n"+
                     "즐거운 하루 되십시오.";
 
 

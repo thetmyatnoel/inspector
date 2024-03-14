@@ -214,7 +214,9 @@ public class IngInspectdataService {
                             data.setBathRoom(null);
                             data.setBathStatus(null);
 
-                            if (!compareData.containsKey("content") && "-".equals(data.getBathContent())) {
+                            if (compareData.containsKey("content") && data.getBathContent() != null && data.getBathContent().equals(compareData.get("content"))) {
+                                data.setBathContent(null);
+                            } else if (!compareData.containsKey("content") && "-".equals(data.getBathContent())) {
                                 data.setBathContent(null);
                             }
                         }

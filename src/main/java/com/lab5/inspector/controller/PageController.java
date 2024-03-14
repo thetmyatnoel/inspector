@@ -51,9 +51,20 @@ public class PageController {
     public String report(Model model, @AuthenticationPrincipal LoginInspector loginInspector)
     {
         String username = loginInspector.getUsername();
-
-
         model.addAttribute("username", username);
+        int pendingCount = waitingApartService.getPendingApartmentsByUsername(username).size();
+        int progressCount = waitingApartService.getProgressApartmentsByUsername(username).size();
+        int completeCount = waitingApartService.getCompleteApartmentsByUsername(username).size();
+
+        log.info("Number of Pending Aparts: {}", pendingCount);
+        log.info("Number of Progress Aparts: {}", progressCount);
+        log.info("Number of Complete Aparts: {}", completeCount);
+
+        // Add counts to the model
+        model.addAttribute("username", username);
+        model.addAttribute("pendingCount", pendingCount);
+        model.addAttribute("progressCount", progressCount);
+        model.addAttribute("completeCount", completeCount);
         return "report";
     }
 

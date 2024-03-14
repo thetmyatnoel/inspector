@@ -140,7 +140,23 @@
                 <form action="" method="post">
                     <div class="form-group mb-0">
                         <label for="ladonRoomName"><i class="ti-pencil mr-1"></i>방이름</label>
-                        <input type="text" class="form-control rounded" id="ladonRoomName" placeholder="Room name" value=""  />
+                        <select class="form-control rounded" id="ladonRoomName">
+                            <option value="침실1">침실1</option>
+                            <option value="침실2">침실2</option>
+                            <option value="화장실1">화장실1</option>
+                            <option value="화장실2">화장실2</option>
+                            <option value="주방">주방</option>
+                            <option value="현관">현관</option>
+                            <option value="거실">거실</option>
+                            <option value="다용도실">다용도실</option>
+                            <option value="대피공간">대피공간</option>
+                            <option value="드레스룸">드레스룸</option>
+                            <option value="발코니">발코니</option>
+                            <option value="베란다">베란다</option>
+                            <option value="복도(세대)">복도(세대)</option>
+                            <option value="실외기실">실외기실</option>
+                            <option value="안방">안방</option>
+                        </select>
                     </div>
                     <div class="form-group mb-0">
                         <label for="ladonPciInput"><i class="ti-pencil mr-1"></i>PCI/L</label>
@@ -167,7 +183,23 @@
                 <form action="" method="post">
                     <div class="form-group mb-0">
                         <label for="formaldehydeRoomName"><i class="ti-pencil mr-1"></i>방이름</label>
-                        <input type="text" class="form-control rounded" id="formaldehydeRoomName" placeholder="Room name" value=""  />
+                        <select class="form-control rounded" id="formaldehydeRoomName">
+                            <option value="거실">거실</option>
+                            <option value="화장실1">화장실1</option>
+                            <option value="화장실2">화장실2</option>
+                            <option value="침실1">침실1</option>
+                            <option value="침실2">침실2</option>
+                            <option value="주방">주방</option>
+                            <option value="현관">현관</option>
+                            <option value="다용도실">다용도실</option>
+                            <option value="대피공간">대피공간</option>
+                            <option value="드레스룸">드레스룸</option>
+                            <option value="발코니">발코니</option>
+                            <option value="복도(세대)">복도(세대)</option>
+                            <option value="베란다">베란다</option>
+                            <option value="실외기실">실외기실</option>
+                            <option value="안방">안방</option>
+                        </select>
                     </div>
                     <div class="form-group mb-0">
                         <label for="formaldehydePpmInput"><i class="ti-pencil mr-1"></i>ppm</label>
@@ -196,7 +228,23 @@
                 <form action="" method="post">
                     <div class="form-group mb-0">
                         <label for="cameraRoomName"><i class="ti-pencil mr-1"></i>방이름</label>
-                        <input type="text" class="form-control rounded" id="cameraRoomName" placeholder="Room name" value=""  />
+                        <select class="form-control rounded" id="cameraRoomName">
+                            <option value="거실">거실</option>
+                            <option value="화장실1">화장실1</option>
+                            <option value="화장실2">화장실2</option>
+                            <option value="침실1">침실1</option>
+                            <option value="침실2">침실2</option>
+                            <option value="주방">주방</option>
+                            <option value="현관">현관</option>
+                            <option value="다용도실">다용도실</option>
+                            <option value="대피공간">대피공간</option>
+                            <option value="드레스룸">드레스룸</option>
+                            <option value="발코니">발코니</option>
+                            <option value="복도(세대)">복도(세대)</option>
+                            <option value="베란다">베란다</option>
+                            <option value="실외기실">실외기실</option>
+                            <option value="안방">안방</option>
+                        </select>
                     </div>
                     <div class="form-group mb-0">
                         <label for="CameraInput"><i class="ti-pencil mr-1"></i>Select</label>
@@ -229,7 +277,23 @@
                 <form action="" method="post">
                     <div class="form-group mb-0">
                         <label for="pipeRoomName"><i class="ti-pencil mr-1"></i>방이름</label>
-                        <input type="text" class="form-control rounded" id="pipeRoomName" placeholder="Room name" value=""  />
+                        <select class="form-control rounded" id="pipeRoomName">
+                            <option value="거실">거실</option>
+                            <option value="화장실1">화장실1</option>
+                            <option value="화장실2">화장실2</option>
+                            <option value="침실1">침실1</option>
+                            <option value="침실2">침실2</option>
+                            <option value="주방">주방</option>
+                            <option value="현관">현관</option>
+                            <option value="다용도실">다용도실</option>
+                            <option value="대피공간">대피공간</option>
+                            <option value="드레스룸">드레스룸</option>
+                            <option value="발코니">발코니</option>
+                            <option value="복도(세대)">복도(세대)</option>
+                            <option value="베란다">베란다</option>
+                            <option value="실외기실">실외기실</option>
+                            <option value="안방">안방</option>
+                        </select>
                     </div>
                     <div class="form-group mb-0">
                         <label for="PipeInput"><i class="ti-pencil mr-1"></i>Select</label>
@@ -261,7 +325,23 @@
                 <form action="" method="post">
                     <div class="form-group mb-0">
                         <label for="bathRoomName"><i class="ti-pencil mr-1"></i>위치이름</label>
-                        <input type="text" class="form-control rounded" id="bathRoomName" placeholder="place name" value=""  />
+                        <select class="form-control rounded" id="bathRoomName">
+                            <option value="거실">거실</option>
+                            <option value="화장실1">화장실1</option>
+                            <option value="화장실2">화장실2</option>
+                            <option value="침실1">침실1</option>
+                            <option value="침실2">침실2</option>
+                            <option value="주방">주방</option>
+                            <option value="현관">현관</option>
+                            <option value="다용도실">다용도실</option>
+                            <option value="대피공간">대피공간</option>
+                            <option value="드레스룸">드레스룸</option>
+                            <option value="발코니">발코니</option>
+                            <option value="복도(세대)">복도(세대)</option>
+                            <option value="베란다">베란다</option>
+                            <option value="실외기실">실외기실</option>
+                            <option value="안방">안방</option>
+                        </select>
                     </div>
                     <div class="form-group mb-0">
                         <label for="BathInput"><i class="ti-pencil mr-1"></i>Check</label>
@@ -296,7 +376,23 @@
                 <form action="" method="post" enctype="multipart/form-data">
                     <div class="form-group mb-0">
                         <label for="finalRoomName"><i class="ti-pencil mr-1"></i>방이름</label>
-                        <input type="text" class="form-control rounded" id="finalRoomName" placeholder="Room name" value=""  />
+                        <select class="form-control rounded" id="finalRoomName">
+                            <option value="거실">거실</option>
+                            <option value="화장실1">화장실1</option>
+                            <option value="화장실2">화장실2</option>
+                            <option value="침실1">침실1</option>
+                            <option value="침실2">침실2</option>
+                            <option value="주방">주방</option>
+                            <option value="현관">현관</option>
+                            <option value="다용도실">다용도실</option>
+                            <option value="대피공간">대피공간</option>
+                            <option value="드레스룸">드레스룸</option>
+                            <option value="발코니">발코니</option>
+                            <option value="복도(세대)">복도(세대)</option>
+                            <option value="베란다">베란다</option>
+                            <option value="실외기실">실외기실</option>
+                            <option value="안방">안방</option>
+                        </select>
                     </div>
                     <div class="form-group mb-0">
                         <label for="gonzoneInput"><i class="ti-pencil mr-1"></i>공종</label>

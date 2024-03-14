@@ -309,7 +309,7 @@ $( document ).ready(function() {
                                         <h5 class="card-title mb-0 ">${inspectData.ladonRoom}</h5>
                                         <button class="close x_badge inspect-x-badge" aria-label="Close" id="ladon_x_badge_${ladonCounter}">&times;</button>
                                         </div>
-                                        <div class="card-body" id="ladonCardBody_${ladonCounter}">${inspectData.ladonPcl} <small>PCL</small></div>
+                                        <div class="card-body" id="ladonCardBody_${ladonCounter}"> <ul class="list-arrow m-0"><li>${inspectData.ladonPcl} <small>PCL</small></li></ul></div>
                                         </div>
                                      </div>`;
                                 $("#progressLadonListDiv").append(ladonHtml);
@@ -324,7 +324,7 @@ $( document ).ready(function() {
                                                                     <h5 class="card-title mb-0 ">${inspectData.formalRoom}</h5>
                                                                     <button class="close x_badge inspect-x-badge" aria-label="Close" id="formal_x_badge_${formalCounter}">&times;</button>
                                                                 </div>
-                                                                <div class="card-body" id="formalCardBody_${formalCounter}">${inspectData.formalPpm} <small>PPM</small></div>
+                                                                <div class="card-body" id="formalCardBody_${formalCounter}"><ul class="list-arrow m-0"><li>${inspectData.formalPpm} <small>PPM</small></li></ul></div>
                                                             </div>
                                                           </div>`;
                                 $("#progressFormaldehydeListDiv").append(formalHtml);
@@ -337,7 +337,7 @@ $( document ).ready(function() {
                                                                     <h5 class="card-title">${inspectData.thermalRoom}</h5>
                                                                     <button class="close x_badge inspect-x-badge ml-1 p-1" aria-label="Close" id="thermal_x_badge_${thermalCounter}">&times;</button>
                                                                 </div>
-                                                                <div class="card-body" id="thermalCardBody_${thermalCounter}"><i class="ti-check-box"></i>${inspectData.thermalStatus}</div>
+                                                                <div class="card-body" id="thermalCardBody_${thermalCounter}"><ul class="list-arrow m-0"><li>${inspectData.thermalStatus}</li></ul></div>
                                                             </div>
                                                           </div>`;
 
@@ -351,7 +351,7 @@ $( document ).ready(function() {
                                                                     <h5 class="card-title">${inspectData.pipeRoom}</h5>
                                                                     <button class="close x_badge inspect-x-badge ml-1 p-1" aria-label="Close" id="pipe_x_badge_${pipeCounter}">&times;</button>
                                                                 </div>
-                                                                <div class="card-body" id="pipeCardBody_${pipeCounter}"><i class="ti-check-box"></i>${inspectData.pipeStatus}</div>
+                                                                <div class="card-body" id="pipeCardBody_${pipeCounter}"><ul class="list-arrow m-0"><li>${inspectData.pipeStatus}</li></ul></div>
                                                             </div>
                                                         </div>`;
 
@@ -368,13 +368,13 @@ $( document ).ready(function() {
                                                                     <h5 class="card-title mb-0">${roomName}</h5>
                                                                     <button class="close x_badge inspect-x-badge" aria-label="Close" id="bath_x_badge_${bathCounter}">&times;</button>
                                                                 </div>
-                                                                <div class="card-body" id="bathStatusBody_${bathCounter}"><i class="ti-check-box"></i>${bathOption}</div>`;
+                                                                <div class="card-body" id="bathStatusBody_${bathCounter}"><ul class="list-arrow m-0"><li>${bathOption}</li></ul></div>`;
 
                                 if (bathOption === "하자") {
-                                    bathHtml += `<div class="card-body" id="bathContentBody_${bathCounter}"><i class="ti-write"></i>${bathText}</div>`;
+                                    bathHtml += `<div class="card-body" id="bathContentBody_${bathCounter}">${bathText}</div>`;
                                 }
 
-                                bathHtml += '</div></div>';
+                                bathHtml += '</div>';
 
 
                                 // Append the created HTML to the bathListDiv
@@ -389,10 +389,10 @@ $( document ).ready(function() {
                                                                     <h5 class="card-title mb-0">${inspectData.finalRoom}</h5>
                                                                     <button class="close x_badge inspect-x-badge" aria-label="Close" id="final_x_badge_${finalCounter}">&times;</button>
                                                                 </div>
-                                                                <div class="card-body" id="gonZone_${finalCounter}"><i class="ti-info"></i>${inspectData.finalGonzone}</div>
-                                                                <div class="card-body" id="selBu_${finalCounter}"><i class="ti-info"></i>${inspectData.finalSelbu}</div>
-                                                                <div class="card-body" id="haZa_${finalCounter}"><i class="ti-info"></i>${inspectData.finalHaza}</div>
-                                                                <div class="card-body" id="bGo_${finalCounter}"><i class="ti-info"></i>${inspectData.finalBgo}</div>`;
+                                                                <div class="card-body mb-0" id="gonZone_${finalCounter}"><li>${inspectData.finalGonzone}</li></div>
+                                                                <div class="card-body mb-0" id="selBu_${finalCounter}"><li>${inspectData.finalSelbu}</li></div>
+                                                                <div class="card-body mb-0" id="haZa_${finalCounter}"><li>${inspectData.finalHaza}</li></div>
+                                                                <div class="card-body mb-0" id="bGo_${finalCounter}"><li>${inspectData.finalBgo}</li></div>`;
 
                                 if (inspectData.finalImage1) {
                                     var image1Src = `data:image/jpeg;base64,${inspectData.finalImage1}`;
@@ -446,8 +446,8 @@ $( document ).ready(function() {
                                                                     <h5 class="card-title mb-0 ">${inspectData.ladonRoom}</h5>
                                                                     <button class="close x_badge inspect-x-badge" aria-label="Close" id="ladon_x_badge_${ladonCounter}">&times;</button>
                                                                 </div>
-                                                                <div class="card-body" id="ladonCardBody_${ladonCounter}">${inspectData.ladonPcl} <small>PCL</small></div>
-                                                            </div>
+                                                                <div class="card-body" id="ladonCardBody_${ladonCounter}"> <ul class="list-arrow m-0"><li>${inspectData.ladonPcl} <small>PCL</small></li></ul></div>
+                                                             </div>
                                                          </div>`;
                                 $("#completeLadonListDiv").append(ladonHtml);
                                 ladonCounter++;
@@ -459,9 +459,9 @@ $( document ).ready(function() {
                                                                         <h5 class="card-title mb-0 ">${inspectData.formalRoom}</h5>
                                                                         <button class="close x_badge inspect-x-badge" aria-label="Close" id="formal_x_badge_${formalCounter}">&times;</button>
                                                                     </div>
-                                                                    <div class="card-body" id="formalCardBody_${formalCounter}">${inspectData.formalPpm} <small>PPM</small></div>
-                                                                </div>
-                                                             </div>`;
+                                                                    <div class="card-body" id="formalCardBody_${formalCounter}"><ul class="list-arrow m-0"><li>${inspectData.formalPpm} <small>PPM</small></li></ul></div>
+                                                            </div>
+                                                          </div>`;
                                 $("#completeFormaldehydeListDiv").append(formalHtml);
                                 formalCounter++;
                             }
@@ -469,12 +469,13 @@ $( document ).ready(function() {
                                 var thermalHtml = `<div class="col-6 individual-list-item">
                                                                     <div class="card card-inverse-info">
                                                                         <div class="card-header mb-0 d-flex justify-content-between">
-                                                                            <h5 class="card-title">${inspectData.thermalRoom}</h5>
+                                                                            <h5 class="card-title mb-0">${inspectData.thermalRoom}</h5>
                                                                             <button class="close x_badge inspect-x-badge ml-1 p-1" aria-label="Close" id="thermal_x_badge_${thermalCounter}">&times;</button>
                                                                         </div>
-                                                                        <div class="card-body" id="thermalCardBody_${thermalCounter}"><i class="ti-check-box"></i>${inspectData.thermalStatus}</div>
-                                                                    </div>
-                                                                </div>`;
+                                                                        <div class="card-body" id="thermalCardBody_${thermalCounter}"><ul class="list-arrow m-0"><li>${inspectData.thermalStatus}</li></ul></div>
+                                                            </div>
+                                                          </div>`;
+
                                 $("#completeCameraListDiv").append(thermalHtml);
                                 thermalCounter++;
                             }
@@ -483,12 +484,12 @@ $( document ).ready(function() {
                                 var pipeHtml = `<div class="col-6 individual-list-item">
                                                                 <div class="card card-inverse-info">
                                                                     <div class="card-header mb-0 d-flex justify-content-between">
-                                                                        <h5 class="card-title">${inspectData.pipeRoom}</h5>
+                                                                        <h5 class="card-title mb-0">${inspectData.pipeRoom}</h5>
                                                                         <button class="close x_badge inspect-x-badge ml-1 p-1" aria-label="Close" id="pipe_x_badge_${pipeCounter}">&times;</button>
                                                                     </div>
-                                                                    <div class="card-body" id="pipeCardBody_${pipeCounter}"><i class="ti-check-box"></i>${inspectData.pipeStatus}</div>
-                                                                </div>
-                                                            </div>`;
+                                                                    <div class="card-body" id="pipeCardBody_${pipeCounter}"><ul class="list-arrow m-0"><li>${inspectData.pipeStatus}</li></ul></div>
+                                                            </div>
+                                                        </div>`;
                                 $("#completePipeListDiv").append(pipeHtml);
                                 pipeCounter++;
                             }
@@ -503,7 +504,7 @@ $( document ).ready(function() {
                                                                         <h5 class="card-title mb-0">${roomName}</h5>
                                                                         <button class="close x_badge inspect-x-badge" aria-label="Close" id="bath_x_badge_${bathCounter}">&times;</button>
                                                                     </div>
-                                                                    <div class="card-body" id="bathStatusBody_${bathCounter}"><i class="ti-check-box"></i>${bathOption}</div>`;
+                                                                    <div class="card-body" id="bathStatusBody_${bathCounter}"><ul class="list-arrow m-0"><li>${bathOption}</li></ul></div>`;
                                 if (bathOption === "하자") {
                                     bathHtml += `<div class="card-body" id="bathContentBody_${bathCounter}"><i class="ti-write"></i>${bathText}</div>`;
                                 }
@@ -519,10 +520,11 @@ $( document ).ready(function() {
                                                                         <h5 class="card-title mb-0">${inspectData.finalRoom}</h5>
                                                                         <button class="close x_badge inspect-x-badge" aria-label="Close" id="final_x_badge_${finalCounter}">&times;</button>
                                                                     </div>
-                                                                    <div class="card-body" id="gonZone_${finalCounter}"><i class="ti-info"></i>${inspectData.finalGonzone}</div>
-                                                                    <div class="card-body" id="selBu_${finalCounter}"><i class="ti-info"></i>${inspectData.finalSelbu}</div>
-                                                                    <div class="card-body" id="haZa_${finalCounter}"><i class="ti-info"></i>${inspectData.finalHaza}</div>
-                                                                    <div class="card-body" id="bGo_${finalCounter}"><i class="ti-info"></i>${inspectData.finalBgo}</div>`;
+                                                                    <div class="card-body mb-0" id="gonZone_${finalCounter}"><li>${inspectData.finalGonzone}</li></div>
+                                                                    <div class="card-body mb-0" id="selBu_${finalCounter}"><li>${inspectData.finalSelbu}</li></div>
+                                                                    <div class="card-body mb-0" id="haZa_${finalCounter}"><li>${inspectData.finalHaza}</li></div>
+                                                                    <div class="card-body mb-0" id="bGo_${finalCounter}"><li>${inspectData.finalBgo}</li></div>`;
+
                                 if (inspectData.finalImage1) {
                                     var image1Src = `data:image/jpeg;base64,${inspectData.finalImage1}`;
                                     finalHtml += `<div class="card-body" id="image1_${finalCounter}"><img src="${image1Src}" alt="Image 1" style="max-width:100%;"></div>`;
@@ -1330,15 +1332,8 @@ function addBathToList(div, roomName, bathOption, bathText) {
         html.push(`        <li>${bathText}</li>
                         </ul>
                     </div>`);
-    }
-    else
-    {
-        html.push(`      </ul>
-                    </div>`);
-    }
-
-    html.push(
-        `</div>
+        html.push(
+            `</div>
          
             <input type="hidden" class="rooms" value="${roomName}" />
             <input type="hidden" class="bathoptions" value="${bathOption}" />
@@ -1346,7 +1341,23 @@ function addBathToList(div, roomName, bathOption, bathText) {
          
         </div>
         `
-    );
+        );
+
+    }
+    else
+    {
+        html.push(`      </ul>
+                    </div>`);
+        html.push(
+            `</div>
+         
+            <input type="hidden" class="rooms" value="${roomName}" />
+            <input type="hidden" class="bathoptions" value="${bathOption}" />
+         
+        </div>
+        `
+        );
+    }
 
     $(div).append(html.join(''));
 }

@@ -26,6 +26,9 @@ const search_tool = (evt) => {
 
 document.querySelector('#searchInput').addEventListener('input', search_tool);
 
+document.addEventListener('DOMContentLoaded', function() {
+    updateBadgeNumbers();
+});
 $(document).ready(function() {
     if (loggedInUsername) {
         $.ajax({

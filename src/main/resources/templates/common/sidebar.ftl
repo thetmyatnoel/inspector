@@ -20,17 +20,7 @@
                 </div>
             </div>
         </li>
-        <li class="nav-item d-none" id="minSizeProfileDiv">
-            <div class="card card-tale">
-                <div class="card-body text-center">
-                    <img src="images/user.png" width="35px;"/>
-                    <div class="d-inline p-1 bg-danger text-white">1</div>
-                    <div class="d-inline p-1 bg-warning text-white">1</div>
-                    <div class="d-inline p-1 bg-success text-white">1</div>
 
-                </div>
-            </div>
-        </li>
         <li class="nav-item">
             <a class="nav-link"  href="/index" >
                 <i class="icon-circle-check menu-icon"></i><span class="menu-title">점검리스트</span>

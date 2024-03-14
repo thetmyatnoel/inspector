@@ -2,13 +2,14 @@
 <html lang="en">
 
 <#include "/common/head.ftl">
+
 <body>
   <div class="container-scroller">
     <!-- partial:partials/_navbar.html -->
     <nav class="navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
       <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center">
-        <a class="navbar-brand brand-logo mr-5" href="/index"><img src="images/logo-text.png" class="mr-2" alt="logo"/></a>
-        <a class="navbar-brand brand-logo-mini" href="/index"><img src="images/logo.png" alt="logo"/></a>
+        <a class="navbar-brand brand-logo mr-5" href="/index"><img src="images/logo-text.png" class="mr-2" alt="logo" style="height: auto; max-width: 100px;"/></a>
+        <a class="navbar-brand brand-logo-mini" href="/index"><img src="images/logo.png" alt="logo" style="height: auto; max-width: 100%;"/></a>
       </div>
       <div class="navbar-menu-wrapper d-flex align-items-center justify-content-end">
         <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize">
