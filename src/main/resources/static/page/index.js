@@ -21,6 +21,30 @@ document.addEventListener('DOMContentLoaded', function() {
 
     updateBadgeNumbers();
 });
+function loadScript(src, callback) {
+    if (!document.querySelector(`script[src="${src}"]`)) {
+        var script = document.createElement("script");
+        script.type = "text/javascript";
+        script.onload = callback;
+        script.src = src;
+        document.body.appendChild(script);
+    } else {
+        callback();
+    }
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+    // Attach event listeners for modal triggers
+    document.querySelectorAll('.ingListDiv').forEach(item => {
+        item.addEventListener('click', () => loadScript('/page/progressModal.js', () => console.log('progressModal.js loaded')));
+    });
+    document.querySelectorAll('.waitListDiv').forEach(item => {
+        item.addEventListener('click', () => loadScript('/page/addModal.js', () => console.log('addModal.js loaded')));
+    });
+    document.querySelectorAll('.endListDiv').forEach(item => {
+        item.addEventListener('click', () => loadScript('/page/endModal.js', () => console.log('endModal.js loaded')));
+    });
+});
 
 $( document ).ready(function() {
     let selectedCard;
@@ -1423,5 +1447,6 @@ function convertToBase64(file, callback) {
 $(document).on('click', '.x_badge', function() {
     $(this).closest('.individual-list-item').remove();
 });
+
 
 

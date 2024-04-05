@@ -173,9 +173,7 @@
   <!-- container-scroller -->
 
   <#include "/common/js.ftl">
-  <script src="/page/index.js">
-  </script>
-  <!-- endinject -->
+  <script src="/page/index.js"></script>
 </body>
 
 </html>

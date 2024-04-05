@@ -51,12 +51,12 @@
                     </div>
                 </div>
                 <div class="row">
-                    <div class="mt-3">
-                        <button id="startRecord">Start Recording</button>
-                        <button id="stopRecord" disabled>Stop Recording</button>
-                        <audio id="audioPlayback" controls></audio>
-                    </div>
-
+                    <h2>Upload or Record Audio for Transcription</h2>
+                    <input type="file" id="audioInput" accept="audio/*" style="display: none;">
+                    <button id="recordButton">Record</button>
+                    <button id="stopRecordButton" style="display: none;">Stop Recording</button>
+                    <button id="uploadButton">Upload Audio</button>
+                    <div id="transcriptionResult">Transcription will appear here</div>
                 </div>
                 <div class="row">
                     <div class="col-md-12 grid-margin stretch-card">
@@ -119,46 +119,88 @@
         updateBadgeNumbers();
     });
 
-    let mediaRecorder;
-    let audioChunks = [];
+    $(document).ready(function() {
+        let mediaRecorder;
+        let audioChunks = [];
 
-    document.getElementById("startRecord").onclick = function() {
-        navigator.mediaDevices.getUserMedia({ audio: true })
-            .then(stream => {
-                mediaRecorder = new MediaRecorder(stream);
-                mediaRecorder.ondataavailable = event => {
-                    audioChunks.push(event.data);
-                };
-                mediaRecorder.onstop = () => {
-                    const audioBlob = new Blob(audioChunks, { type: 'audio/ogg; codecs=opus' });
-                    const audioUrl = URL.createObjectURL(audioBlob);
-                    document.getElementById("audioPlayback").src = audioUrl;
+        $('#recordButton').click(function() {
+            navigator.mediaDevices.getUserMedia({ audio: true })
+                .then(stream => {
+                    mediaRecorder = new MediaRecorder(stream);
+                    audioChunks = []; // Ensure audioChunks is empty before starting a new recording
+                    mediaRecorder.start();
+                    console.log("Recording started");
 
-                    // Prepare to send this data to the backend
-                    const formData = new FormData();
-                    formData.append("file", audioBlob);
+                    mediaRecorder.ondataavailable = function(event) {
+                        audioChunks.push(event.data);
+                    };
 
-                    // Fetch API to send the audio file to the backend for transcription
-                    fetch("http://localhost:5001/transcribe", { // Ensure this URL matches your setup
-                        method: "POST",
-                        body: formData,
-                    })
-                        .then(response => response.json())
-                        .then(data => {
-                            console.log(data); // Process transcription result
-                        })
-                        .catch(error => console.error("Error:", error));
-                };
-                audioChunks = [];
-                mediaRecorder.start();
-                document.getElementById("stopRecord").disabled = false;
+                    mediaRecorder.onstop = function() {
+                        console.log("Recording stopped");
+                        const audioBlob = new Blob(audioChunks, { type: 'audio/wav' });
+                        console.log("Blob created, size:", audioBlob.size);
+                        if (audioBlob.size > 0) {
+                            sendAudioToServer(audioBlob);
+                        } else {
+                            console.error("Blob is empty. No data was captured.");
+                        }
+                        // Clear the chunks array after blob creation
+                        audioChunks = [];
+                        stream.getTracks().forEach(track => track.stop()); // Ensure all tracks are stopped
+                        $('#stopRecordButton').hide();
+                        $('#recordButton').show();
+                    };
+
+                    $('#stopRecordButton').show();
+                    $('#recordButton').hide();
+                })
+                .catch(error => {
+                    console.error("Error accessing the microphone:", error);
+                });
+        });
+
+        $('#stopRecordButton').click(function() {
+            if (mediaRecorder && mediaRecorder.state === 'recording') {
+                mediaRecorder.stop();
+            }
+        });
+
+        $('#uploadButton').click(function() {
+            $('#audioInput').click();
+        });
+
+        $('#audioInput').change(function(event) {
+            const file = event.target.files[0];
+            if (file) {
+                sendAudioToServer(file);
+            }
+        });
+
+        function sendAudioToServer(file) {
+            const formData = new FormData();
+            formData.append('file', file);
+
+            console.log("Preparing to send audio to server");
+            $.ajax({
+                url: '/data/transcribe', // Ensure this URL matches your server endpoint
+                type: 'POST',
+                data: formData,
+                contentType: false,
+                processData: false,
+                success: function(data) {
+                    console.log('Success:', data.transcription);
+
+                    var parsedData = (typeof data === "string") ? JSON.parse(data) : data;
+                    console.log('Parsed data:', parsedData);
+                    console.log('Transcription:', parsedData.transcription);
+                    $('#transcriptionResult').text(parsedData.transcription);
+                },
+                error: function(xhr, status, error) {
+                    console.error('Error:', error);
+                }
             });
-    };
-
-    document.getElementById("stopRecord").onclick = function() {
-        mediaRecorder.stop();
-        document.getElementById("stopRecord").disabled = true;
-    };
+        }
+    });
 </script>
 
 <!-- endinject -->

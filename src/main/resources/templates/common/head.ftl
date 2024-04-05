@@ -20,6 +20,8 @@
     <link href="css/bootstrap.min.css" rel="stylesheet" />
     <!-- endinject -->
     <link rel="shortcut icon" href="images/favicon2.png"/>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.8.1/font/bootstrap-icons.min.css" rel="stylesheet">
+
 
 
 </head>

@@ -144,28 +144,32 @@
             </div>
             <div class="modal-body">
                 <div class="form-group mb-0">
-                    <label for="ladonRoomName"><i class="ti-pencil mr-1"></i>방이름</label>
+                    <label for="progressLadonRoomName"><i class="ti-pencil mr-1"></i>방이름</label>
                     <select class="form-control rounded" id="progressLadonRoomName">
-                        <option value="침실1">침실1</option>
-                        <option value="침실2">침실2</option>
-                        <option value="화장실1">화장실1</option>
-                        <option value="화장실2">화장실2</option>
+                        <option value="침실 1">침실 1</option>
+                        <option value="침실 2">침실 2</option>
+                        <option value="화장실 1">화장실 1</option>
+                        <option value="화장실 2">화장실 2</option>
                         <option value="주방">주방</option>
                         <option value="현관">현관</option>
                         <option value="거실">거실</option>
                         <option value="다용도실">다용도실</option>
-                        <option value="대피공간">대피공간</option>
+                        <option value="대피 공간">대피 공간</option>
                         <option value="드레스룸">드레스룸</option>
                         <option value="발코니">발코니</option>
                         <option value="베란다">베란다</option>
-                        <option value="복도(세대)">복도(세대)</option>
+                        <option value="복도">복도</option>
                         <option value="실외기실">실외기실</option>
                         <option value="안방">안방</option>
                     </select>
+                    <button type="button" class="btn pstart-record-icon" data-target="progressLadonRoomName"><i class="bi bi-mic-fill"></i></button>
+                    <button type="button" class="btn btn-danger pstop-record-icon" data-target="progressLadonRoomName" style="display:none;"><i class="bi bi-mic-mute-fill"></i></button>
                 </div>
                 <div class="form-group mb-0">
-                    <label for="ladonPciInput"><i class="ti-pencil mr-1"></i>PCI/L</label>
-                    <input type="number" class="form-control rounded" id="progressLadonPciInput" placeholder="Enter pci/L" value=""  />
+                    <label for="progressLadonPciInput"><i class="ti-pencil mr-1"></i>PCI/L</label>
+                    <input type="text" class="form-control rounded" id="progressLadonPciInput" placeholder="Enter pci/L" value=""  />
+                    <button type="button" class="btn pstart-record-icon" data-target="progressLadonPciInput"><i class="bi bi-mic-fill"></i></button>
+                    <button type="button" class="btn btn-danger pstop-record-icon" data-target="progressLadonPciInput" style="display:none;"><i class="bi bi-mic-mute-fill"></i></button>
                 </div>
             </div>
             <div class="modal-footer d-inline-block text-center">
@@ -185,28 +189,32 @@
             </div>
             <div class="modal-body">
                 <div class="form-group mb-0">
-                    <label for="formaldehydeRoomName"><i class="ti-pencil mr-1"></i>방이름</label>
+                    <label for="progressFormaldehydeRoomName"><i class="ti-pencil mr-1"></i>방이름</label>
                     <select class="form-control rounded" id="progressFormaldehydeRoomName">
                         <option value="거실">거실</option>
-                        <option value="화장실1">화장실1</option>
-                        <option value="화장실2">화장실2</option>
-                        <option value="침실1">침실1</option>
-                        <option value="침실2">침실2</option>
+                        <option value="화장실 1">화장실 1</option>
+                        <option value="화장실 2">화장실 2</option>
+                        <option value="침실 1">침실 1</option>
+                        <option value="침실 2">침실 2</option>
                         <option value="주방">주방</option>
                         <option value="현관">현관</option>
                         <option value="다용도실">다용도실</option>
-                        <option value="대피공간">대피공간</option>
+                        <option value="대피 공간">대피 공간</option>
                         <option value="드레스룸">드레스룸</option>
                         <option value="발코니">발코니</option>
-                        <option value="복도(세대)">복도(세대)</option>
+                        <option value="복도">복도</option>
                         <option value="베란다">베란다</option>
                         <option value="실외기실">실외기실</option>
                         <option value="안방">안방</option>
                     </select>
+                    <button type="button" class="btn pstart-record-icon" data-target="progressFormaldehydeRoomName"><i class="bi bi-mic-fill"></i></button>
+                    <button type="button" class="btn btn-danger pstop-record-icon" data-target="progressFormaldehydeRoomName" style="display:none;"><i class="bi bi-mic-mute-fill"></i></button>
                 </div>
                 <div class="form-group mb-0">
-                    <label for="formaldehydePpmInput"><i class="ti-pencil mr-1"></i>ppm</label>
-                    <input type="number" class="form-control rounded" id="progressFormaldehydePpmInput" placeholder="ppm" value=""  />
+                    <label for="progressFormaldehydePpmInput"><i class="ti-pencil mr-1"></i>ppm</label>
+                    <input type="text" class="form-control rounded" id="progressFormaldehydePpmInput" placeholder="ppm" value=""  />
+                    <button type="button" class="btn pstart-record-icon" data-target="progressFormaldehydePpmInput"><i class="bi bi-mic-fill"></i></button>
+                    <button type="button" class="btn btn-danger pstop-record-icon" data-target="progressFormaldehydePpmInput" style="display:none;"><i class="bi bi-mic-mute-fill"></i></button>
                 </div>
             </div>
             <div class="modal-footer d-inline-block text-center">
@@ -226,27 +234,29 @@
             </div>
             <div class="modal-body">
                 <div class="form-group mb-0">
-                    <label for="cameraRoomName"><i class="ti-pencil mr-1"></i>방이름</label>
+                    <label for="progressCameraRoomName"><i class="ti-pencil mr-1"></i>방이름</label>
                     <select class="form-control rounded" id="progressCameraRoomName">
                         <option value="거실">거실</option>
-                        <option value="화장실1">화장실1</option>
-                        <option value="화장실2">화장실2</option>
-                        <option value="침실1">침실1</option>
-                        <option value="침실2">침실2</option>
+                        <option value="화장실 1">화장실 1</option>
+                        <option value="화장실 2">화장실 2</option>
+                        <option value="침실 1">침실 1</option>
+                        <option value="침실 2">침실 2</option>
                         <option value="주방">주방</option>
                         <option value="현관">현관</option>
                         <option value="다용도실">다용도실</option>
-                        <option value="대피공간">대피공간</option>
+                        <option value="대피 공간">대피 공간</option>
                         <option value="드레스룸">드레스룸</option>
                         <option value="발코니">발코니</option>
-                        <option value="복도(세대)">복도(세대)</option>
+                        <option value="복도">복도</option>
                         <option value="베란다">베란다</option>
                         <option value="실외기실">실외기실</option>
                         <option value="안방">안방</option>
                     </select>
+                    <button type="button" class="btn pstart-record-icon" data-target="progressCameraRoomName"><i class="bi bi-mic-fill"></i></button>
+                    <button type="button" class="btn btn-danger pstop-record-icon" data-target="progressCameraRoomName" style="display:none;"><i class="bi bi-mic-mute-fill"></i></button>
                 </div>
                 <div class="form-group mb-0">
-                    <label for="CameraInput"><i class="ti-pencil mr-1"></i>Select</label>
+                    <label for="progressCameraInput"><i class="ti-pencil mr-1"></i>Select</label>
                     <div class="custom-radio">
                         <label><input type="radio" name="progressCameraOption" value="정상"> 정상</label><br>
                         <label><input type="radio" name="progressCameraOption" value="곰팡이"> 곰팡이</label><br>
@@ -254,6 +264,8 @@
                         <label><input type="radio" name="progressCameraOption" value="단열재 누락"> 단열재 누락</label><br>
                         <label><input type="radio" name="progressCameraOption" value="누수"> 누수</label>
                     </div>
+                    <button type="button" class="btn pstart-record-icon" data-target="progressCameraOption"><i class="bi bi-mic-fill"></i></button>
+                    <button type="button" class="btn btn-danger pstop-record-icon" data-target="progressCameraOption" style="display:none;"><i class="bi bi-mic-mute-fill"></i></button>
                 </div>
             </div>
             <div class="modal-footer d-inline-block text-center">
@@ -273,33 +285,37 @@
             </div>
             <div class="modal-body">
                 <div class="form-group mb-0">
-                    <label for="pipeRoomName"><i class="ti-pencil mr-1"></i>방이름</label>
+                    <label for="progressPipeRoomName"><i class="ti-pencil mr-1"></i>방이름</label>
                     <select class="form-control rounded" id="progressPipeRoomName">
                         <option value="거실">거실</option>
-                        <option value="화장실1">화장실1</option>
-                        <option value="화장실2">화장실2</option>
-                        <option value="침실1">침실1</option>
-                        <option value="침실2">침실2</option>
+                        <option value="화장실 1">화장실 1</option>
+                        <option value="화장실 2">화장실 2</option>
+                        <option value="침실 1">침실 1</option>
+                        <option value="침실 2">침실 2</option>
                         <option value="주방">주방</option>
                         <option value="현관">현관</option>
                         <option value="다용도실">다용도실</option>
-                        <option value="대피공간">대피공간</option>
+                        <option value="대피 공간">대피 공간</option>
                         <option value="드레스룸">드레스룸</option>
                         <option value="발코니">발코니</option>
-                        <option value="복도(세대)">복도(세대)</option>
+                        <option value="복도">복도</option>
                         <option value="베란다">베란다</option>
                         <option value="실외기실">실외기실</option>
                         <option value="안방">안방</option>
                     </select>
+                    <button type="button" class="btn pstart-record-icon" data-target="progressPipeRoomName"><i class="bi bi-mic-fill"></i></button>
+                    <button type="button" class="btn btn-danger pstop-record-icon" data-target="progressPipeRoomName" style="display:none;"><i class="bi bi-mic-mute-fill"></i></button>
                 </div>
                 <div class="form-group mb-0">
-                    <label for="PipeInput"><i class="ti-pencil mr-1"></i>Select</label>
+                    <label for="progressPipeInput"><i class="ti-pencil mr-1"></i>Select</label>
                     <div class="custom-radio">
                         <label><input type="radio" name="progressPipeOption" value="정상"> 정상</label><br>
                         <label><input type="radio" name="progressPipeOption" value="파손"> 파손</label><br>
                         <label><input type="radio" name="progressPipeOption" value="폐자재"> 폐자재</label><br>
                         <label><input type="radio" name="progressPipeOption" value="배관 막힘"> 배관 막힘</label>
                     </div>
+                    <button type="button" class="btn pstart-record-icon" data-target="progressPipeOption"><i class="bi bi-mic-fill"></i></button>
+                    <button type="button" class="btn btn-danger pstop-record-icon" data-target="progressPipeOption" style="display:none;"><i class="bi bi-mic-mute-fill"></i></button>
                 </div>
             </div>
             <div class="modal-footer d-inline-block text-center">
@@ -319,36 +335,41 @@
             </div>
             <div class="modal-body">
                 <div class="form-group mb-0">
-                    <label for="bathRoomName"><i class="ti-pencil mr-1"></i>위치이름</label>
+                    <label for="progressBathRoomName"><i class="ti-pencil mr-1"></i>위치이름</label>
                     <select class="form-control rounded" id="progressBathRoomName">
                         <option value="거실">거실</option>
-                        <option value="화장실1">화장실1</option>
-                        <option value="화장실2">화장실2</option>
-                        <option value="침실1">침실1</option>
-                        <option value="침실2">침실2</option>
+                        <option value="화장실 1">화장실 1</option>
+                        <option value="화장실 2">화장실 2</option>
+                        <option value="침실 1">침실 1</option>
+                        <option value="침실 2">침실 2</option>
                         <option value="주방">주방</option>
                         <option value="현관">현관</option>
                         <option value="다용도실">다용도실</option>
-                        <option value="대피공간">대피공간</option>
+                        <option value="대피 공간">대피 공간</option>
                         <option value="드레스룸">드레스룸</option>
                         <option value="발코니">발코니</option>
-                        <option value="복도(세대)">복도(세대)</option>
+                        <option value="복도">복도</option>
                         <option value="베란다">베란다</option>
                         <option value="실외기실">실외기실</option>
                         <option value="안방">안방</option>
                     </select>
+                    <button type="button" class="btn pstart-record-icon" data-target="progressBathRoomName"><i class="bi bi-mic-fill"></i></button>
+                    <button type="button" class="btn btn-danger pstop-record-icon" data-target="progressBathRoomName" style="display:none;"><i class="bi bi-mic-mute-fill"></i></button>
                 </div>
                 <div class="form-group mb-0">
-                    <label for="BathInput"><i class="ti-pencil mr-1"></i>Check</label>
+                    <label for="progressBathInput"><i class="ti-pencil mr-1"></i>Check</label>
                     <div class="custom-radio">
                         <label><input type="radio" name="progressBathOption" value="하자"> 하자</label>
                         <label><input type="radio" name="progressBathOption" value="정상"> 정상</label>
-
                     </div>
+                    <button type="button" class="btn pstart-record-icon" data-target="progressBathOption"><i class="bi bi-mic-fill"></i></button>
+                    <button type="button" class="btn btn-danger pstop-record-icon" data-target="progressBathOption" style="display:none;"><i class="bi bi-mic-mute-fill"></i></button>
                 </div>
                 <div class="form-group mb-0">
-                    <label for="BathText"><i class="ti-pencil mr-1"></i>하자내용</label>
+                    <label for="progressBathText"><i class="ti-pencil mr-1"></i>하자내용</label>
                     <input type="text" class="form-control rounded" id="progressBathText" placeholder="내용 입력" value=""  />
+                    <button type="button" class="btn pstart-record-icon" data-target="progressBathText"><i class="bi bi-mic-fill"></i></button>
+                    <button type="button" class="btn btn-danger pstop-record-icon" data-target="progressBathText" style="display:none;"><i class="bi bi-mic-mute-fill"></i></button>
                 </div>
 
             </div>
@@ -369,40 +390,50 @@
             </div>
             <div class="modal-body">
                 <div class="form-group mb-0">
-                    <label for="finalRoomName"><i class="ti-pencil mr-1"></i>방이름</label>
+                    <label for="progressFinalRoomName"><i class="ti-pencil mr-1"></i>방이름</label>
                     <select class="form-control rounded" id="progressFinalRoomName">
                         <option value="거실">거실</option>
-                        <option value="화장실1">화장실1</option>
-                        <option value="화장실2">화장실2</option>
-                        <option value="침실1">침실1</option>
-                        <option value="침실2">침실2</option>
+                        <option value="화장실 1">화장실 1</option>
+                        <option value="화장실 2">화장실 2</option>
+                        <option value="침실 1">침실 1</option>
+                        <option value="침실 2">침실 2</option>
                         <option value="주방">주방</option>
                         <option value="현관">현관</option>
                         <option value="다용도실">다용도실</option>
-                        <option value="대피공간">대피공간</option>
+                        <option value="대피 공간">대피 공간</option>
                         <option value="드레스룸">드레스룸</option>
                         <option value="발코니">발코니</option>
-                        <option value="복도(세대)">복도(세대)</option>
+                        <option value="복도">복도</option>
                         <option value="베란다">베란다</option>
                         <option value="실외기실">실외기실</option>
                         <option value="안방">안방</option>
                     </select>
+                    <button type="button" class="btn pstart-record-icon" data-target="progressFinalRoomName"><i class="bi bi-mic-fill"></i></button>
+                    <button type="button" class="btn btn-danger pstop-record-icon" data-target="progressFinalRoomName" style="display:none;"><i class="bi bi-mic-mute-fill"></i></button>
                 </div>
                 <div class="form-group mb-0">
-                    <label for="gonzoneInput"><i class="ti-pencil mr-1"></i>공종</label>
+                    <label for="progressGonzoneInput"><i class="ti-pencil mr-1"></i>공종</label>
                     <input type="text" class="form-control rounded" id="progressGonzoneInput" placeholder="내용" value=""  />
+                    <button type="button" class="btn pstart-record-icon" data-target="progressGonzoneInput"><i class="bi bi-mic-fill"></i></button>
+                    <button type="button" class="btn btn-danger pstop-record-icon" data-target="progressGonzoneInput" style="display:none;"><i class="bi bi-mic-mute-fill"></i></button>
                 </div>
                 <div class="form-group mb-0">
-                    <label for="selbuInput"><i class="ti-pencil mr-1"></i>세부공종</label>
+                    <label for="progressSelbuInput"><i class="ti-pencil mr-1"></i>세부공종</label>
                     <input type="text" class="form-control rounded" id="progressSelbuInput" placeholder="내용" value=""  />
+                    <button type="button" class="btn pstart-record-icon" data-target="progressSelbuInput"><i class="bi bi-mic-fill"></i></button>
+                    <button type="button" class="btn btn-danger pstop-record-icon" data-target="progressSelbuInput" style="display:none;"><i class="bi bi-mic-mute-fill"></i></button>
                 </div>
                 <div class="form-group mb-0">
-                    <label for="hazaInput"><i class="ti-pencil mr-1"></i>하자내용</label>
+                    <label for="progressHazaInput"><i class="ti-pencil mr-1"></i>하자내용</label>
                     <input type="text" class="form-control rounded" id="progressHazaInput" placeholder="내용" value=""  />
+                    <button type="button" class="btn pstart-record-icon" data-target="progressHazaInput"><i class="bi bi-mic-fill"></i></button>
+                    <button type="button" class="btn btn-danger pstop-record-icon" data-target="progressHazaInput" style="display:none;"><i class="bi bi-mic-mute-fill"></i></button>
                 </div>
                 <div class="form-group mb-0">
-                    <label for="bgoInput"><i class="ti-pencil mr-1"></i>비고</label>
+                    <label for="progressBgoInput"><i class="ti-pencil mr-1"></i>비고</label>
                     <input type="text" class="form-control rounded" id="progressBgoInput" placeholder="내용" value=""  />
+                    <button type="button" class="btn pstart-record-icon" data-target="progressBgoInput"><i class="bi bi-mic-fill"></i></button>
+                    <button type="button" class="btn btn-danger pstop-record-icon" data-target="progressBgoInput" style="display:none;"><i class="bi bi-mic-mute-fill"></i></button>
                 </div>
                 <div class="form-group mb-0">
                     <!-- Image input field 1 -->

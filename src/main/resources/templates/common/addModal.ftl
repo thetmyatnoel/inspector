@@ -141,26 +141,30 @@
                     <div class="form-group mb-0">
                         <label for="ladonRoomName"><i class="ti-pencil mr-1"></i>방이름</label>
                         <select class="form-control rounded" id="ladonRoomName">
-                            <option value="침실1">침실1</option>
-                            <option value="침실2">침실2</option>
-                            <option value="화장실1">화장실1</option>
-                            <option value="화장실2">화장실2</option>
+                            <option value="침실 1">침실 1</option>
+                            <option value="침실 2">침실 2</option>
+                            <option value="화장실 1">화장실 1</option>
+                            <option value="화장실 2">화장실 2</option>
                             <option value="주방">주방</option>
                             <option value="현관">현관</option>
                             <option value="거실">거실</option>
                             <option value="다용도실">다용도실</option>
-                            <option value="대피공간">대피공간</option>
+                            <option value="대피 공간">대피 공간</option>
                             <option value="드레스룸">드레스룸</option>
                             <option value="발코니">발코니</option>
                             <option value="베란다">베란다</option>
-                            <option value="복도(세대)">복도(세대)</option>
+                            <option value="복도">복도</option>
                             <option value="실외기실">실외기실</option>
                             <option value="안방">안방</option>
                         </select>
+                        <button type="button" class="btn start-record-icon" data-target="ladonRoomName"><i class="bi bi-mic-fill"></i></button>
+                        <button type="button" class="btn btn-danger stop-record-icon" data-target="ladonRoomName" style="display:none;"><i class="bi bi-mic-mute-fill"></i></button>
                     </div>
                     <div class="form-group mb-0">
                         <label for="ladonPciInput"><i class="ti-pencil mr-1"></i>PCI/L</label>
-                        <input type="number" class="form-control rounded" id="ladonPciInput" placeholder="Enter pci/L" value=""  />
+                        <input type="text" class="form-control rounded" id="ladonPciInput" placeholder="Enter pci/L" value=""  />
+                        <button type="button" class="btn start-record-icon" data-target="ladonPciInput"><i class="bi bi-mic-fill"></i></button>
+                        <button type="button" class="btn btn-danger stop-record-icon" data-target="ladonPciInput" style="display:none;"><i class="bi bi-mic-mute-fill"></i></button>
                     </div>
                 </form>
             </div>
@@ -185,25 +189,29 @@
                         <label for="formaldehydeRoomName"><i class="ti-pencil mr-1"></i>방이름</label>
                         <select class="form-control rounded" id="formaldehydeRoomName">
                             <option value="거실">거실</option>
-                            <option value="화장실1">화장실1</option>
-                            <option value="화장실2">화장실2</option>
-                            <option value="침실1">침실1</option>
-                            <option value="침실2">침실2</option>
+                            <option value="화장실 1">화장실 1</option>
+                            <option value="화장실 2">화장실 2</option>
+                            <option value="침실 1">침실 1</option>
+                            <option value="침실 2">침실 2</option>
                             <option value="주방">주방</option>
                             <option value="현관">현관</option>
                             <option value="다용도실">다용도실</option>
-                            <option value="대피공간">대피공간</option>
+                            <option value="대피 공간">대피 공간</option>
                             <option value="드레스룸">드레스룸</option>
                             <option value="발코니">발코니</option>
-                            <option value="복도(세대)">복도(세대)</option>
+                            <option value="복도">복도</option>
                             <option value="베란다">베란다</option>
                             <option value="실외기실">실외기실</option>
                             <option value="안방">안방</option>
                         </select>
+                        <button type="button" class="btn start-record-icon" data-target="formaldehydeRoomName"><i class="bi bi-mic-fill"></i></button>
+                        <button type="button" class="btn btn-danger stop-record-icon" data-target="formaldehydeRoomName" style="display:none;"><i class="bi bi-mic-mute-fill"></i></button>
                     </div>
                     <div class="form-group mb-0">
                         <label for="formaldehydePpmInput"><i class="ti-pencil mr-1"></i>ppm</label>
-                        <input type="number" class="form-control rounded" id="formaldehydePpmInput" placeholder="ppm" value=""  />
+                        <input type="text" class="form-control rounded" id="formaldehydePpmInput" placeholder="ppm" value=""  />
+                        <button type="button" class="btn start-record-icon" data-target="formaldehydePpmInput"><i class="bi bi-mic-fill"></i></button>
+                        <button type="button" class="btn btn-danger stop-record-icon" data-target="formaldehydePpmInput" style="display:none;"><i class="bi bi-mic-mute-fill"></i></button>
                     </div>
 
                 </form>
@@ -230,21 +238,23 @@
                         <label for="cameraRoomName"><i class="ti-pencil mr-1"></i>방이름</label>
                         <select class="form-control rounded" id="cameraRoomName">
                             <option value="거실">거실</option>
-                            <option value="화장실1">화장실1</option>
-                            <option value="화장실2">화장실2</option>
-                            <option value="침실1">침실1</option>
-                            <option value="침실2">침실2</option>
+                            <option value="화장실 1">화장실 1</option>
+                            <option value="화장실 2">화장실 2</option>
+                            <option value="침실 1">침실 1</option>
+                            <option value="침실 2">침실 2</option>
                             <option value="주방">주방</option>
                             <option value="현관">현관</option>
                             <option value="다용도실">다용도실</option>
-                            <option value="대피공간">대피공간</option>
+                            <option value="대피 공간">대피 공간</option>
                             <option value="드레스룸">드레스룸</option>
                             <option value="발코니">발코니</option>
-                            <option value="복도(세대)">복도(세대)</option>
+                            <option value="복도">복도</option>
                             <option value="베란다">베란다</option>
                             <option value="실외기실">실외기실</option>
                             <option value="안방">안방</option>
                         </select>
+                        <button type="button" class="btn start-record-icon" data-target="cameraRoomName"><i class="bi bi-mic-fill"></i></button>
+                        <button type="button" class="btn btn-danger stop-record-icon" data-target="cameraRoomName" style="display:none;"><i class="bi bi-mic-mute-fill"></i></button>
                     </div>
                     <div class="form-group mb-0">
                         <label for="CameraInput"><i class="ti-pencil mr-1"></i>Select</label>
@@ -255,6 +265,8 @@
                             <label><input type="radio" name="cameraOption" value="단열재 누락"> 단열재 누락</label><br>
                             <label><input type="radio" name="cameraOption" value="누수"> 누수</label>
                         </div>
+                        <button type="button" class="btn start-record-icon" data-target="cameraOption"><i class="bi bi-mic-fill"></i></button>
+                        <button type="button" class="btn btn-danger stop-record-icon" data-target="cameraOption" style="display:none;"><i class="bi bi-mic-mute-fill"></i></button>
                     </div>
                 </form>
             </div>
@@ -279,21 +291,23 @@
                         <label for="pipeRoomName"><i class="ti-pencil mr-1"></i>방이름</label>
                         <select class="form-control rounded" id="pipeRoomName">
                             <option value="거실">거실</option>
-                            <option value="화장실1">화장실1</option>
-                            <option value="화장실2">화장실2</option>
-                            <option value="침실1">침실1</option>
-                            <option value="침실2">침실2</option>
+                            <option value="화장실 1">화장실 1</option>
+                            <option value="화장실 2">화장실 2</option>
+                            <option value="침실 1">침실 1</option>
+                            <option value="침실 2">침실 2</option>
                             <option value="주방">주방</option>
                             <option value="현관">현관</option>
                             <option value="다용도실">다용도실</option>
-                            <option value="대피공간">대피공간</option>
+                            <option value="대피 공간">대피 공간</option>
                             <option value="드레스룸">드레스룸</option>
                             <option value="발코니">발코니</option>
-                            <option value="복도(세대)">복도(세대)</option>
+                            <option value="복도">복도</option>
                             <option value="베란다">베란다</option>
                             <option value="실외기실">실외기실</option>
                             <option value="안방">안방</option>
                         </select>
+                        <button type="button" class="btn start-record-icon" data-target="pipeRoomName"><i class="bi bi-mic-fill"></i></button>
+                        <button type="button" class="btn btn-danger stop-record-icon" data-target="pipeRoomName" style="display:none;"><i class="bi bi-mic-mute-fill"></i></button>
                     </div>
                     <div class="form-group mb-0">
                         <label for="PipeInput"><i class="ti-pencil mr-1"></i>Select</label>
@@ -303,6 +317,8 @@
                             <label><input type="radio" name="pipeOption" value="폐자재"> 폐자재</label><br>
                             <label><input type="radio" name="pipeOption" value="배관 막힘"> 배관 막힘</label>
                         </div>
+                        <button type="button" class="btn start-record-icon" data-target="pipeOption"><i class="bi bi-mic-fill"></i></button>
+                        <button type="button" class="btn btn-danger stop-record-icon" data-target="pipeOption" style="display:none;"><i class="bi bi-mic-mute-fill"></i></button>
                     </div>
                 </form>
             </div>
@@ -327,33 +343,38 @@
                         <label for="bathRoomName"><i class="ti-pencil mr-1"></i>위치이름</label>
                         <select class="form-control rounded" id="bathRoomName">
                             <option value="거실">거실</option>
-                            <option value="화장실1">화장실1</option>
-                            <option value="화장실2">화장실2</option>
-                            <option value="침실1">침실1</option>
-                            <option value="침실2">침실2</option>
+                            <option value="화장실 1">화장실 1</option>
+                            <option value="화장실 2">화장실 2</option>
+                            <option value="침실 1">침실 1</option>
+                            <option value="침실 2">침실 2</option>
                             <option value="주방">주방</option>
                             <option value="현관">현관</option>
                             <option value="다용도실">다용도실</option>
-                            <option value="대피공간">대피공간</option>
+                            <option value="대피 공간">대피 공간</option>
                             <option value="드레스룸">드레스룸</option>
                             <option value="발코니">발코니</option>
-                            <option value="복도(세대)">복도(세대)</option>
+                            <option value="복도">복도</option>
                             <option value="베란다">베란다</option>
                             <option value="실외기실">실외기실</option>
                             <option value="안방">안방</option>
                         </select>
+                        <button type="button" class="btn start-record-icon" data-target="bathRoomName"><i class="bi bi-mic-fill"></i></button>
+                        <button type="button" class="btn btn-danger stop-record-icon" data-target="bathRoomName" style="display:none;"><i class="bi bi-mic-mute-fill"></i></button>
                     </div>
                     <div class="form-group mb-0">
                         <label for="BathInput"><i class="ti-pencil mr-1"></i>Check</label>
                         <div class="custom-radio">
                             <label><input type="radio" name="bathOption" value="하자"> 하자</label>
                             <label><input type="radio" name="bathOption" value="정상"> 정상</label>
-
                         </div>
+                        <button type="button" class="btn start-record-icon" data-target="bathOption"><i class="bi bi-mic-fill"></i></button>
+                        <button type="button" class="btn btn-danger stop-record-icon" data-target="bathOption" style="display:none;"><i class="bi bi-mic-mute-fill"></i></button>
                     </div>
                     <div class="form-group mb-0">
                         <label for="BathText"><i class="ti-pencil mr-1"></i>하자내용</label>
                         <input type="text" class="form-control rounded" id="bathText" placeholder="내용 입력" value=""  />
+                        <button type="button" class="btn start-record-icon" data-target="BathText"><i class="bi bi-mic-fill"></i></button>
+                        <button type="button" class="btn btn-danger stop-record-icon" data-target="BathText" style="display:none;"><i class="bi bi-mic-mute-fill"></i></button>
                     </div>
                 </form>
             </div>
@@ -378,37 +399,51 @@
                         <label for="finalRoomName"><i class="ti-pencil mr-1"></i>방이름</label>
                         <select class="form-control rounded" id="finalRoomName">
                             <option value="거실">거실</option>
-                            <option value="화장실1">화장실1</option>
-                            <option value="화장실2">화장실2</option>
-                            <option value="침실1">침실1</option>
-                            <option value="침실2">침실2</option>
+                            <option value="화장실 1">화장실 1</option>
+                            <option value="화장실 2">화장실 2</option>
+                            <option value="침실 1">침실 1</option>
+                            <option value="침실 2">침실 2</option>
                             <option value="주방">주방</option>
                             <option value="현관">현관</option>
                             <option value="다용도실">다용도실</option>
-                            <option value="대피공간">대피공간</option>
+                            <option value="대피 공간">대피 공간</option>
                             <option value="드레스룸">드레스룸</option>
                             <option value="발코니">발코니</option>
-                            <option value="복도(세대)">복도(세대)</option>
+                            <option value="복도">복도</option>
                             <option value="베란다">베란다</option>
                             <option value="실외기실">실외기실</option>
                             <option value="안방">안방</option>
                         </select>
+                        <button type="button" class="btn start-record-icon" data-target="finalRoomName"><i class="bi bi-mic-fill"></i></button>
+                        <button type="button" class="btn btn-danger stop-record-icon" data-target="finalRoomName" style="display:none;"><i class="bi bi-mic-mute-fill"></i></button>
                     </div>
                     <div class="form-group mb-0">
                         <label for="gonzoneInput"><i class="ti-pencil mr-1"></i>공종</label>
                         <input type="text" class="form-control rounded" id="gonzoneInput" placeholder="내용" value=""  />
+                        <button type="button" class="btn start-record-icon" data-target="gonzoneInput"><i class="bi bi-mic-fill"></i></button>
+                        <button type="button" class="btn btn-danger stop-record-icon" data-target="gonzoneInput" style="display:none;"><i class="bi bi-mic-mute-fill"></i></button>
+
                     </div>
                     <div class="form-group mb-0">
                         <label for="selbuInput"><i class="ti-pencil mr-1"></i>세부공종</label>
                         <input type="text" class="form-control rounded" id="selbuInput" placeholder="내용" value=""  />
+                        <button type="button" class="btn start-record-icon" data-target="selbuInput"><i class="bi bi-mic-fill"></i></button>
+                        <button type="button" class="btn btn-danger stop-record-icon" data-target="selbuInput" style="display:none;"><i class="bi bi-mic-mute-fill"></i></button>
+
                     </div>
                     <div class="form-group mb-0">
                         <label for="hazaInput"><i class="ti-pencil mr-1"></i>하자내용</label>
                         <input type="text" class="form-control rounded" id="hazaInput" placeholder="내용" value=""  />
+                        <button type="button" class="btn start-record-icon" data-target="hazaInput"><i class="bi bi-mic-fill"></i></button>
+                        <button type="button" class="btn btn-danger stop-record-icon" data-target="hazaInput" style="display:none;"><i class="bi bi-mic-mute-fill"></i></button>
+
                     </div>
                     <div class="form-group mb-0">
                         <label for="bgoInput"><i class="ti-pencil mr-1"></i>비고</label>
                         <input type="text" class="form-control rounded" id="bgoInput" placeholder="내용" value=""  />
+                        <button type="button" class="btn start-record-icon" data-target="bgoInput"><i class="bi bi-mic-fill"></i></button>
+                        <button type="button" class="btn btn-danger stop-record-icon" data-target="bgoInput" style="display:none;"><i class="bi bi-mic-mute-fill"></i></button>
+
                     </div>
                     <div class="form-group mb-0">
                         <!-- Image input field 1 -->
