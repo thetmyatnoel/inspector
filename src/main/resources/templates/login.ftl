@@ -48,32 +48,43 @@
     </div>
     <!-- content-wrapper ends -->
   </div>
+  <#include "/common/footer.ftl">
   <!-- page-body-wrapper ends -->
 </div>
 <!-- container-scroller -->
 <#include "/common/js.ftl">
 <script>
   function validateFields() {
-    const username = $("#username").val();
-    const password = $("#password").val();
-    const isFilled = username && password;
+    const username = $("#username").val().trim();
+    const password = $("#password").val().trim();
+    const isUsernameFilled = username.length > 0;
+    const isPasswordFilled = password.length > 0;
 
-    $("#loginBtn").prop('disabled', !isFilled);
-    $("#fillFieldsMsg").toggleClass('d-none', isFilled);
+    // Enable the login button only when both fields are filled
+    $("#loginBtn").prop('disabled', !(isUsernameFilled && isPasswordFilled));
+
+    // Show or hide the general message for filling both fields
+    $("#fillFieldsMsg").toggleClass('d-none', isUsernameFilled || isPasswordFilled);
+
+    // Show or hide specific warning labels for each field
+    $("#usernameAlertLabel").toggleClass('d-none', isUsernameFilled);
+    $("#passwordAlertLabel").toggleClass('d-none', isPasswordFilled);
   }
 
   $("#username, #password").on('input', validateFields);
+
+  // Toggle password visibility
   document.getElementById('togglePassword').addEventListener('click', function (e) {
-    // Toggle the type attribute of the password field
     const passwordField = document.getElementById('password');
     const passwordIcon = document.getElementById('passwordIcon');
     const type = passwordField.getAttribute('type') === 'password' ? 'text' : 'password';
     passwordField.setAttribute('type', type);
 
+    // Toggle the icon classes
     passwordIcon.classList.toggle('ti-eye');
-    passwordIcon.classList.toggle('ti-eye');
+    passwordIcon.classList.toggle('ti-eye-slash');
   });
-
 </script>
+
 </body>
 </html>
