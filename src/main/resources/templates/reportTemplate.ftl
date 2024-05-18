@@ -17,8 +17,6 @@
 
     .container {
         width: 100%;
-        padding-right: 15px;
-        padding-left: 15px;
         margin-right: auto;
         margin-left: auto;
     }
@@ -39,21 +37,19 @@
 
     .custom-table, .custom-table th, .custom-table td {
         border: 1px solid #dee2e6;
-    }
-
-    .custom-table th, .custom-table td {
         padding: 8px;
         text-align: center;
+        background-color: #ffffff;  /* Set all cells to white background */
     }
 
-    .custom-table thead th {
+    .custom-table th {
         background-color: #343a40;
         color: white;
         border-color: #454d55;
     }
 
-    .custom-table tbody tr:nth-child(odd) {
-        background-color: #f2f2f2;
+    .custom-table tbody tr:hover {
+        background-color: #f2f2f2;  /* Optional: Hover effect with light grey color */
     }
 
     .custom-table tbody tr:hover {
@@ -77,6 +73,28 @@
     }
     .text-container {
         padding-right: 20px;   }
+    /* Table details styling */
+    .table-details {
+        width: 100%;
+        border-collapse: collapse;
+        margin-bottom: 1rem;
+    }
+
+    .table-details th, .table-details td {
+        padding: 8px;
+        text-align: left;
+        vertical-align: top;
+    }
+
+    .table-details .left-col {
+        background-color: #f2f2f2; /* Light grey background */
+        font-weight: bold; /* Bold text */
+    }
+
+    .table-details .right-col {
+        background-color: #ffffff; /* White background */
+    }
+
 
 </style>
 
@@ -132,7 +150,7 @@
 <p>※ 하자보수에 대한 법적 기준으로 참고해주세요</p>
 <div class="page-break"></div>
 
-<h3 class="text-center my-4">장비 점검 결과 보고서</h3>
+<h3 class="text-center my-4">사전 점검 결과 보고서</h3>
 <div id="reportContainer" class="container mt-5">
 
     <!-- Radon Eye Data -->
@@ -153,7 +171,7 @@
             <#if updatedApart.ladonRoom?? && updatedApart.ladonRoom?trim != "" && updatedApart.ladonRoom != "-" && updatedApart.ladonPcl?? && updatedApart.ladonPcl?trim != "" && updatedApart.ladonPcl != "-">
                 <#assign rowNumber = rowNumber + 1>
                 <tr>
-                    <th scope="row">${rowNumber}</th>
+                    <td>${rowNumber}</td>
                     <td>${updatedApart.ladonRoom}</td>
                     <td><input type="checkbox" <#if (updatedApart.ladonPcl?number <= 1.3)>checked</#if> disabled></td>
                     <td><input type="checkbox" <#if (updatedApart.ladonPcl?number > 1.3)>checked</#if> disabled></td>
@@ -195,7 +213,7 @@
             <#if updatedApart.formalRoom?? && updatedApart.formalRoom?trim != "" && updatedApart.formalRoom?trim != "-" && updatedApart.formalPpm?? && updatedApart.formalPpm?trim != "" && updatedApart.formalPpm?trim != "-">
                 <#assign rowNumber = rowNumber + 1>
                 <tr>
-                    <th scope="row">${rowNumber}</th>
+                    <td>${rowNumber}</td>
                     <td>${updatedApart.formalRoom}</td>
                     <td><input type="checkbox" <#if (updatedApart.formalPpm?number <= 0.01)>checked</#if> disabled></td>
                     <td><input type="checkbox" <#if (updatedApart.formalPpm?number > 0.01)>checked</#if> disabled></td>
@@ -231,7 +249,7 @@
             <#if updatedApart.thermalRoom?? && updatedApart.thermalRoom?trim != "" && updatedApart.thermalRoom?trim != "-" && updatedApart.thermalStatus?? && updatedApart.thermalStatus?trim != "" && updatedApart.thermalStatus?trim != "-">
                 <#assign rowNumber = rowNumber + 1>
                 <tr>
-                    <th scope="row">${rowNumber}</th>
+                    <td>${rowNumber}</td>
                     <td>${updatedApart.thermalRoom}</td>
                     <td>
                         <input type="checkbox" <#if updatedApart.thermalStatus?contains("곰팡이")>checked</#if> disabled> 곰팡이
@@ -264,7 +282,7 @@
             <#if updatedApart.pipeRoom?? && updatedApart.pipeRoom?trim != "" && updatedApart.pipeRoom?trim != "-" && updatedApart.pipeStatus?? && updatedApart.pipeStatus?trim != "" && updatedApart.pipeStatus?trim != "-">
                 <#assign rowNumber = rowNumber + 1>
                 <tr>
-                    <th scope="row">${rowNumber}</th>
+                    <td>${rowNumber}</td>
                     <td>${updatedApart.pipeRoom}</td>
                     <td>
                         <input type="checkbox" <#if updatedApart.pipeStatus?contains("파손")>checked</#if> disabled> 파손
@@ -298,7 +316,7 @@
             <#if updatedApart.bathRoom?? && updatedApart.bathRoom?trim != "" && updatedApart.bathRoom?trim != "-" && updatedApart.bathStatus?? && updatedApart.bathStatus?trim != "" && updatedApart.bathStatus?trim != "-" && updatedApart.bathContent?? && updatedApart.bathContent?trim != "">
                 <#assign rowNumber = rowNumber + 1>
                 <tr>
-                    <th scope="row">${rowNumber}</th>
+                    <td>${rowNumber}</td>
                     <td>${updatedApart.bathRoom}</td>
                     <td><input type="checkbox" <#if updatedApart.bathStatus == "정상">checked</#if> disabled></td>
                     <td><input type="checkbox" <#if updatedApart.bathStatus == "하자">checked</#if> disabled></td>
@@ -328,27 +346,46 @@
                 <tr>
                     <!-- Image 1 Column -->
                     <#if updatedApart.finalImage1Base64?? && updatedApart.finalImage1Base64 != "">
-                        <td><img src="data:image/jpeg;base64,${updatedApart.finalImage1Base64}" alt="Image 1" style="width:250px; height:200px; transform: rotate(90deg);"></td>
+                        <td><img src="data:image/jpeg;base64,${updatedApart.finalImage1Base64}" alt="Image 1" style="width:200px; height:150px; transform: rotate(90deg);"></td>
                     <#else>
                         <td>No Image</td>
                     </#if>
 
                     <!-- Image 2 Column -->
                     <#if updatedApart.finalImage2Base64?? && updatedApart.finalImage2Base64 != "">
-                        <td><img src="data:image/jpeg;base64,${updatedApart.finalImage2Base64}" alt="Image 2" style="width:250px; height:200px; transform: rotate(90deg);"></td>
+                        <td><img src="data:image/jpeg;base64,${updatedApart.finalImage2Base64}" alt="Image 2" style="width:200px; height:150px; transform: rotate(90deg);"></td>
                     <#else>
                         <td>No Image</td>
                     </#if>
 
                     <!-- Details Column -->
+                    <!-- Details Column -->
                     <td>
-                        <table>
-                            <tr><td>No.</td><td>${rowNumber}</td></tr>
-                            <tr><td>위치</td><td>${updatedApart.finalRoom}</td></tr>
-                            <tr><td>공종</td><td>${updatedApart.finalGonzone!'-'} </td></tr>
-                            <tr><td>세부 공종</td><td>${updatedApart.finalSelbu!'-'} </td></tr>
-                            <tr><td>하자 내용</td><td>${updatedApart.finalHaza!'-'} </td></tr>
-                            <tr><td>비고</td><td>${updatedApart.finalBgo!'-'} </td></tr>
+                        <table class="table-details">
+                            <tr>
+                                <td class="left-col">No.</td>
+                                <td class="right-col">${rowNumber}</td>
+                            </tr>
+                            <tr>
+                                <td class="left-col">점검 위치</td>
+                                <td class="right-col">${updatedApart.finalRoom}</td>
+                            </tr>
+                            <tr>
+                                <td class="left-col">점검 종류</td>
+                                <td class="right-col">${updatedApart.finalGonzone!'-'} </td>
+                            </tr>
+                            <tr>
+                                <td class="left-col">세부 점검 종류</td>
+                                <td class="right-col">${updatedApart.finalSelbu!'-'} </td>
+                            </tr>
+                            <tr>
+                                <td class="left-col">점검 결과 내용</td>
+                                <td class="right-col">${updatedApart.finalHaza!'-'} </td>
+                            </tr>
+                            <tr>
+                                <td class="left-col">비고</td>
+                                <td class="right-col">${updatedApart.finalBgo!'-'} </td>
+                            </tr>
                         </table>
                     </td>
                 </tr>
